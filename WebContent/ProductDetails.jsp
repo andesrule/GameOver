@@ -26,7 +26,7 @@
 				
 				
 				<input type="number" name="quantity" placeholder="Quantity"/>
-				<a href="carrello?actions=addcart&id=<%=bean.getId()%>" id="put-in-cart">Aggiungi Al Carrello</a>
+				<a href="#carrello?actions=addcart&id=<%=bean.getId()%>" id="put-in-cart">Aggiungi Al Carrello</a>
 					
 				</div>
 				</div>
