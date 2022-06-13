@@ -17,7 +17,7 @@
 
     <!--IMPORTO IL FONT MONTSERRAT DA GOOGLE FONT-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
 
     <!--IMPORTO LA LIBRERIA ANIMATE.CSS CHE SI OCCUPA DELLE ANIMAZIONI DELLA PAGINA WEB-->
@@ -45,26 +45,26 @@
 
 <body>
 
-<%@ include file = "../frammenti/homepageHeader.jsp"%>
+	<!-- INCLUDO IL FILE RELATIVO ALL'HEADER DELLA HOMEPAGE -->
+	<%@ include file = "../frammenti/homepageHeader.jsp"%>
 
 
-<% if(user!=null && user.getAdmin()==1){%>
-	<h3 style="text-align:center; margin-top:15px">BENVENUTO ADMIN: <%=user.getUsername()%></h3>
-	<a href="AdminServlet2?action=mostra">ACCEDI ALLA GESTIONE PRODOTTI E ORDINI</a> <% 
-} else if(user!=null && user.getAdmin()==0){%>
-	<h3 style="text-align:center">BENVENUTO : <%=user.getUsername()%></h3><% 
-}
-%>
+	<% if(user!=null && user.getAdmin()==1){%>
+		<h3 style="text-align:center; margin-top:15px">BENVENUTO ADMIN: <%=user.getUsername()%></h3>
+		<a href="AdminServlet2?action=mostra">ACCEDI ALLA GESTIONE PRODOTTI E ORDINI</a> <% 
+	} else if(user!=null && user.getAdmin()==0){%>
+		<h3 style="text-align:center">BENVENUTO : <%=user.getUsername()%></h3><% 
+	}%>
 
-		<% if(user!=null){	%>
-			<br><a href="LogoutServlet">LOGOUT</a>
-			<br><a href="UserAreaServlet?action=datiUtente&idUtente=<%=user.getIdUtente()%>">AREA UTENTE</a>
-			<% }%>
+	<% if(user!=null){	%>
+		<br><a href="LogoutServlet">LOGOUT</a>
+		<br><a href="UserAreaServlet?action=datiUtente&idUtente=<%=user.getIdUtente()%>">AREA UTENTE</a>
+	<% }%>
 	 	
 	 	
 	
-
-  <div class="gamesgrid" >
+	<!-- DEFINISCO IL CONTAINER PER LA GRIGLIA DEI VIDEOGIOCHI -->
+ 	<div class="gamesgrid" >
        	
 	<% if(articoli != null && articoli.size()!=0){
 		
@@ -74,27 +74,27 @@
 		
 		%>
 		
-         
-	 <div class="game">
-		<a href="ProductsServlet?action=dettagli&id=<%= bean.getId() %> "><img class="cover" src="./img/<%= bean.getImg().substring(bean.getImg().lastIndexOf("img")+4) %>" ></a>
-		
-		<div class="game-title">
-			<div class="game-price">
-				<p><span><%= bean.getNome() %></span>        <span class="price"><%= bean.getPrezzo() %>&euro;</span></p><br>
+         <!-- DEFINISCO IL CONTAINER PER I VIDEOGIOCHI -->
+	 	<div class="game">
+			<a href="ProductsServlet?action=dettagli&id=<%= bean.getId() %> "><img class="cover" src="./img/<%= bean.getImg().substring(bean.getImg().lastIndexOf("img")+4) %>" ></a>
+			
+			<!-- DEFINISCO IL CONTAINER RELATIVO ALLE INFO DEI VIDEOGIOCHI -->
+			<div class="game-title">
+				<div class="game-price">
+					<p><span><%= bean.getNome() %></span>        <span class="price"><%= bean.getPrezzo() %>&euro;</span></p><br>
 		 		
-		 		<!--  va bene ma implementa con js-->  
-				<%if(user!=null && user.getAdmin()==1){%>
-					<a style="color:red" href="AdminServlet2?action=removeFromDB&IdBean=<%=bean.getId()%>">Rimuovi dal Database</a>
-					<% } %> 
-					
-				
+		 			<!--  va bene ma implementa con js-->  
+					<%if(user!=null && user.getAdmin()==1){%>
+						<a style="color:red" href="AdminServlet2?action=removeFromDB&IdBean=<%=bean.getId()%>">Rimuovi dal Database</a>
+						<% } %> 
+				</div>
 		 	</div>
 		 </div>
-		 </div>
 		
-<%}} %>
-</div> 
+		<%}} %>
+	</div> 
 	
+	<!-- INCLUDO IL FILE RELATIVO AL FOOTER -->
 	<%@ include file = "../frammenti/footer.jsp" %>	
 		
 </body>
