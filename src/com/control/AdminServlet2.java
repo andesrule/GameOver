@@ -83,7 +83,7 @@ public class AdminServlet2 extends HttpServlet {
 		else if(action!=null && action.equalsIgnoreCase("insert")){
 			
 			try {
-				int id = Integer.parseInt(request.getParameter("Id"));
+				
 				String Titolo = request.getParameter("Titolo_Gioco");System.out.println(Titolo);
 				double prezzo =Double.parseDouble(request.getParameter("Prezzo"));System.out.println(prezzo);
 				double iva = Double.parseDouble(request.getParameter("IVA"));System.out.println(iva);
@@ -98,7 +98,7 @@ public class AdminServlet2 extends HttpServlet {
 				System.out.println(uploadPath);
 				ProductBean bean = new ProductBean();
 				PlatformBean bean2= new PlatformBean();
-				bean.setId(id);
+				
 				bean.setNome(Titolo);
 				bean.setPrezzo(prezzo);
 				bean.setIva(iva);
@@ -108,10 +108,10 @@ public class AdminServlet2 extends HttpServlet {
 				bean.setImg(uploadPath);
 				
 				model.doSave(bean);
-				System.out.println(bean.getId());
+				
 				bean2.setDescr("Steam");
 				bean2.setTipoPiattaforma(platname);
-				bean2.setIdArticoloRef(bean.getId());
+				bean2.setIdArticoloRef(model.doRetrieveMaxID());
 				model3.doSave(bean2);
 				
 				//Salvo immagine nella cartella

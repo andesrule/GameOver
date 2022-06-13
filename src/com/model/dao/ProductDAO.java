@@ -102,6 +102,30 @@ public class ProductDAO implements ProductModel {
 			}
 		}
 	}
+	public synchronized int doRetrieveMaxID() throws SQLException {
+		Connection con = null;
+		PreparedStatement statement=null;
+		int MaxId=0;
+		String query = "select idArticolo from articolo where idArticolo=(select max(idArticolo) from articolo)";
+		try {
+			con=ds.getConnection();
+			statement=con.prepareStatement(query);
+			ResultSet result = statement.executeQuery();
+			while(result.next()) {
+				MaxId= result.getInt("idArticolo");
+			}
+			
+	}finally {
+		try {
+			if (statement != null)
+			statement.close();
+	} finally {
+		if (con != null)
+			con.close();
+	}
+	}
+		return MaxId;
+}
 	public synchronized void doDelete(int id) throws SQLException{
 		
 		Connection con = null;
@@ -114,6 +138,7 @@ public class ProductDAO implements ProductModel {
 			statement=con.prepareStatement(query);
 			statement.setInt(1,id);
 			statement.executeUpdate();
+			
 			
 		}
 		finally {
