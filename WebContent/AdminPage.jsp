@@ -102,7 +102,7 @@
 <table>
     <tr>
         <td>
-      		<input type="text" name="Id" form="my_form" placeholder="ID gioco"/>
+      		
             <input type="text" name="Titolo_Gioco" form="my_form" placeholder="Titolo Gioco"/>
             <input type="text" name="Prezzo" form="my_form" placeholder="Prezzo"/>
             <input type="text" name="IVA" form="my_form" placeholder="IVA"/>

@@ -59,7 +59,6 @@
 		
 		%>
 		
-         
 	 <div class="game">
 		<a href="ProductsServlet?action=dettagli&id=<%= bean.getId() %> "><img class="cover" src="./img/<%= bean.getImg().substring(bean.getImg().lastIndexOf("img")+4) %>" ></a>
 		

@@ -10,6 +10,7 @@ public interface ProductModel {
 	public  Collection<ProductBean> doRetrieveByPlatform(String tipoPiattaforma) throws SQLException;
 	public  Collection<ProductBean> doRetrieveAll() throws SQLException;
 	public 	ProductBean doRetrieveByKey(int id) throws SQLException;
+	public  int doRetrieveMaxID() throws SQLException;
 	
 	
 }
