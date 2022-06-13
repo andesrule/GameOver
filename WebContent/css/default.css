@@ -1,0 +1,16 @@
+html, head, body{
+    font-family: 'Montserrat', sans-serif;
+	background-color: rgb(77, 77, 77);
+}
+
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}

@@ -4,6 +4,9 @@
     <%
 	Cart cart = (Cart) request.getSession().getAttribute("cart");
     ProductDAO model = new ProductDAO();
+    
+    UserBean utente = (UserBean) request.getSession().getAttribute("current_user");
+      
 %>
 <!DOCTYPE html>
 <html>
@@ -13,6 +16,11 @@
 </head>
 <body>
 <h1>Carrello</h1>
+
+	<!-- Inserimento identificativo del carrello -->
+<% if(utente!=null){%>
+	<h3>BENVENUTO NEL TUO CARRELLO: <%=utente.getUsername()%></h3>
+	<%} %>
 
 	<div class="small-container cart-container">
 
@@ -77,14 +85,19 @@
 				</tr>
 			</table>
 		
-			
+	<!-- Verifica dell'utente, e procedo al checkout solo quando ho effettuato almeno un acquisto -->	
+		<% if(utente!=null && cart != null) {%>
+			<p>Procedi con il checkout</p>
 			<div class="buy">
 				<div class="wrapperLink">	
 				<a <%if (cart == null || cart.getProducts().size()!=0) {%>
-					href="#actionbuy" id="buy-button" <%} else {%> id="buy-button-disable" <%}%>>Acquista</a>
+					href="#actionbuy" id="buy-button" <%} else {%> id="buy-button-disable" <%}%>>Checkout</a>
 				</div>
 			</div>
-		
+		<%}else{ %>
+			<p>Se non ha effettuato l'accesso Loggati qui <a href="LoginPage.jsp">LOGIN</a></p>
+			<p>O Registrati qui <a href="Signup.jsp">SIGNUP</a></p>
+			<%} %>
 			</div>
 	</div>
 	

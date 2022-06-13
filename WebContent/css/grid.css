@@ -1,0 +1,41 @@
+.gamesgrid{
+    display: flex;
+    border-radius: 30px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 5px;
+    align-items: center;
+    justify-content: center;
+    background-color: #1B1B1B;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    float: left;
+    height: fit-content;
+    width: fit-content;
+}
+
+.game{
+    margin: 15px;
+}
+
+span{
+	font-size: 20px;
+	color: white;
+}
+
+span.price{
+	float: right;
+	font-size: 30px;
+	color: white;
+}
+
+.cover{
+	border-radius: 20px;
+	transition: all 0.3s ease-in-out;
+}
+
+.cover:hover{
+	transform: scale(1.050);
+}

@@ -1,0 +1,132 @@
+footer{
+    position: relative;
+    width: 100%;
+    left: 0%;
+    bottom: 0%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    padding: 35px;
+    bottom: 0%;
+    background-color: black;
+}
+
+.left{
+    flex: 1 0 auto;
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo{
+    align-self: flex-start;
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+    width: fit-content;
+    height: fit-content;
+    cursor: pointer;
+}
+
+.logo:hover{
+    opacity: 0.7;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+a:hover{
+    color: rgb(187, 187, 187);
+}
+
+.link{
+    margin-top: 20px;
+}
+
+.social{
+    display: none;
+    align-items: flex-end;
+    align-content: center;
+    height: fit-content;
+    width: fit-content;
+    animation: flipInX;
+    animation-duration: 0.5s;
+}
+
+.socialpage li{
+    display: inline;
+    margin-right: 50px;
+}
+
+.socialico{
+    width: 45px;
+}
+
+.socialico:hover{
+    animation: pulse;
+    animation-duration: 1s;
+}
+
+.right{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/*MODIFICIO LE PROPRIETA' DELLA SEZIONE DEDICATA ALLA BARRA DI RICERCA*/
+.searchsection{
+    display: block;
+    width: 100%;
+    height: 40px;
+}
+
+/*MODIFICO LE PROPRIETA' DELLA BARRA DI RICERCA*/
+.searchbar{
+    float: left;
+    outline: none;
+    border: 2px solid #757575;
+    background-color: black;
+    color: white;
+    font-size: 25px;
+    width: 90%;
+    height: 40px;
+    padding: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+.searchbar:hover{
+    border: 2px solid white;
+}
+
+.searchbar:focus{
+    border: 2px solid white;
+}
+
+/*MODIFICO LE PROPRIETA' DELLA LENTE DI INGRANDIMENTO CHE VIENE USATA COME SUBMIT BUTTON*/
+.lensbutton{
+    cursor: pointer;
+    background-color: black;
+    width: 10%;
+    height: 40px;
+    font-size: 20px;
+    color: #757575;
+    border: 2px solid #757575;
+    transition: all 0.2s ease-in-out;
+}
+
+.lensbutton:hover{
+    color: white;
+    border: 2px solid white;
+}
+
+p{
+    margin-top: 40px;
+    color: white;
+}
