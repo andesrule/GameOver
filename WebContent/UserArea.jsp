@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="java.util.*,com.model.javabeans.*"%>
-  	<% Collection<?> metodi = (Collection<?>) request.getAttribute("metodiUser");%>
+  	<% Collection<?> metodi = (Collection<?>) request.getAttribute("metodiUser");
+  	UserBean user = (UserBean) request.getSession().getAttribute("current_user");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,6 +42,15 @@
 
 </table>
 
+<h3>AGGIUNGI NUOVO METODO DI PAGAMENTO:</h3>
+<form method="get" action="UserAreaServlet">
+<input type="hidden" name="action" value="insertPayment">
+<input type="hidden" name="idutente" value="<%=user.getIdUtente()%>">
+<input type="text" placeholder="Numero Carta" name="numeroCarta">
+<input type="number" placeholder="CVV" name="cvv">
+<input type="date" placeholder="Data Scadenza" name="dataScadenza">
+<input type="submit" value="Aggiungi">
+</form>
 
 </body>
 </html>

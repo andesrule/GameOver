@@ -11,6 +11,7 @@ public class PlatformBean implements Serializable{
 	
 	private int idPiattaforma,idArticoloRef;
 	private String descr,tipoPiattaforma;
+	
 	public PlatformBean(int idPiattaforma, int idArticoloRef, String descr, String tipoPiattaforma) {
 		super();
 		this.idPiattaforma = idPiattaforma;
@@ -18,6 +19,7 @@ public class PlatformBean implements Serializable{
 		this.descr = descr;
 		this.tipoPiattaforma = tipoPiattaforma;
 	}
+	
 	public PlatformBean() {
 		super();
 	}

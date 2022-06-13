@@ -33,6 +33,7 @@ public class UserDAO implements UserModel {
 	}
 	
 	public synchronized void doSave(UserBean user) throws SQLException{
+		
 		Connection connection = null;
 		PreparedStatement preparedStatement = null; 
 

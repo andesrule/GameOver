@@ -2,11 +2,7 @@
     pageEncoding="ISO-8859-1" import="com.model.javabeans.*, java.util.*"%>
     
 <%	UserBean user = (UserBean) request.getSession().getAttribute("current_user");
-	String utente_check= (String)request.getAttribute("utente_non_trovato");
-	String utente_signup_check= (String)request.getAttribute("utente_signup_check");
-	String utente_logout= (String)request.getAttribute("utente_logout");
 	Collection<?> articoli = (Collection<?>)request.getSession().getAttribute("prodotti");
-	String login_check = "true";
  %>
 <!DOCTYPE html>
 <html>
@@ -26,7 +22,8 @@
 
 <h3>PIATTAFORME:</h3>
 <div>
-	 <ul id="Piattaforme">
+
+	 <ul id="Piattaforme" >
 	 	<li><a href="SortPlatformServlet?action=Pc">PC</a></li>
 	 	<li><a href="SortPlatformServlet?action=Ps">PS5</a></li>
 	 	<li><a href="SortPlatformServlet?action=Nint">NINTENDO</a></li>
@@ -63,11 +60,9 @@
 	</tr>
 
 <% if(articoli != null && articoli.size()!=0){
-		
 		Iterator<?> it =articoli.iterator();
 		while(it.hasNext()){
 		ProductBean bean = (ProductBean)it.next();	
-		
 		%>
 	
 

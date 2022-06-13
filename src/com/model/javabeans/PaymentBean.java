@@ -12,8 +12,14 @@ public class PaymentBean implements Serializable {
 	private int idPagamento,cvv;
 	private String ncarta;
 	private Date dataScad;
+	private int idUtenteRef;
 	
-	
+	public int getIdUtenteRef() {
+		return idUtenteRef;
+	}
+	public void setIdUtenteRef(int idUtenteRef) {
+		this.idUtenteRef = idUtenteRef;
+	}
 	public PaymentBean() {
 		super();
 	}

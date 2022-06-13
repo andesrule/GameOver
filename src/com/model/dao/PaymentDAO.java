@@ -40,8 +40,8 @@ public class PaymentDAO implements PaymentModel{
 		PreparedStatement preparedStatement = null; 
 
 		
-		String insertSQL = "INSERT INTO " + TABLE_NAME +"(`numeroCarta`, `cvv`, `dataScadenza`)"
-		+ " VALUES (?, ?, ?)";  
+		String insertSQL = "INSERT INTO " + TABLE_NAME +"(`numeroCarta`, `cvv`, `dataScadenza`,`idUtenteRef`)"
+		+ " VALUES (?, ?, ?, ?)";  
 
 		try {
 			connection = ds.getConnection(); 
@@ -49,7 +49,7 @@ public class PaymentDAO implements PaymentModel{
 			preparedStatement.setString(1, bean.getNcarta());
 			preparedStatement.setInt(2, bean.getCvv());
 		    preparedStatement.setDate(3, bean.getDataScad());
-
+		    preparedStatement.setInt(4,bean.getIdUtenteRef());
 			preparedStatement.executeUpdate(); 
 		}
 		
