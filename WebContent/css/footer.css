@@ -1,3 +1,4 @@
+/*DEFINISCO I VALORI CSS PER IL CONTAINER DEL FOOTER*/
 footer{
     position: relative;
     width: 100%;
@@ -13,6 +14,7 @@ footer{
     background-color: black;
 }
 
+/*DEFINISCO IL CSS PER IL CONTAINER DELLA LEFT SECTION*/
 .left{
     flex: 1 0 auto;
     margin-top: 40px;
@@ -20,6 +22,7 @@ footer{
     margin-right: auto;
 }
 
+/*DEFINISCO I VALORI PER IL CONTAINER DEL LOGO*/
 .logo{
     align-self: flex-start;
     opacity: 1;
@@ -33,6 +36,7 @@ footer{
     opacity: 0.7;
 }
 
+/*DEFINISCO IL CSS PER I LINK*/
 a{
     text-decoration: none;
     color: white;
@@ -47,6 +51,7 @@ a:hover{
     margin-top: 20px;
 }
 
+/*DEFINISCO I VALORI PER IL DIV CHE APPARE QUANDO IL MOUSE PASSA SULLA SCRITTA I NOSTRI SOCIAL*/
 .social{
     display: none;
     align-items: flex-end;
@@ -71,6 +76,7 @@ a:hover{
     animation-duration: 1s;
 }
 
+/*DEFINISCO IL CSS PER LA SEZIONE DESTRA*/
 .right{
     display: flex;
     flex-direction: column;

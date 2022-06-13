@@ -1,3 +1,4 @@
+/*DEFINISCO IL CSS PER IL CONTAINER DELA GRIGLIA DEI VIDEOGIOCHI*/
 .gamesgrid{
     display: flex;
     border-radius: 30px;
@@ -16,10 +17,12 @@
     width: fit-content;
 }
 
+/*DEFINISCO IL CONTAINER PER I GIOCHI*/
 .game{
     margin: 15px;
 }
 
+/*DEFINISCO IL CSS PER LE INFO DEI GIOCHI*/
 span{
 	font-size: 20px;
 	color: white;
@@ -31,6 +34,7 @@ span.price{
 	color: white;
 }
 
+/*DEFINISCO IL CSS PER LE COPERTINE DEI GIOCHI*/
 .cover{
 	border-radius: 20px;
 	transition: all 0.3s ease-in-out;
