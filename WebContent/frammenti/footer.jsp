@@ -1,10 +1,11 @@
+<!-- DEFINISCO IL CONTAINER PER IL FOOTER -->
 <footer>
         
         <div class="logo"><a href="index.jsp"><img src="img/logo.png" alt="logo"></a></div>
         <div class="left">
             <ul>
                 <li class="link"><a href=""><b>Su di noi</b></a></li>
-                <li class="link"><span id="socialenter" href=""  onmouseover="document.getElementById('social').style.display='flex'; document.getElementById('socialenter').style.display='none';"><b>I nostri social</b></span></li>
+                <li class="link"><span id="socialenter" onmouseover="document.getElementById('social').style.display='flex'; document.getElementById('socialenter').style.display='none';"><b>I nostri social</b></span></li>
             </ul>
             <div class="social" id="social" onmouseleave="document.getElementById('social').style.display='none'; document.getElementById('socialenter').style.display='block';">
                 <ul class="socialpage">
