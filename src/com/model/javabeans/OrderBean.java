@@ -2,6 +2,7 @@ package com.model.javabeans;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.time.LocalDate;
 
 public class OrderBean implements Serializable {
 
@@ -88,8 +89,8 @@ public class OrderBean implements Serializable {
 		return dataSpedizione;
 	}
 
-	public void setDataSpedizione(Date dataSpedizione) {
-		this.dataSpedizione = dataSpedizione;
+	public void setDataSpedizione(Date randomBirthDate) {
+		this.dataSpedizione = randomBirthDate;
 	}
 
 	public String getStatoOrdine() {

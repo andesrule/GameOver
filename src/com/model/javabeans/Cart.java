@@ -25,6 +25,7 @@ public class Cart {
 		products.put(id, newQuantity);
 	}
 	
+
 	//Rimuove un prodotto dal carrello indipendentemente dalla quantità
 	public void deleteAllProduct(int id) {
 		products.remove(id);

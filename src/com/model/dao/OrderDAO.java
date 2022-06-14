@@ -53,7 +53,7 @@ public class OrderDAO implements OrderModel {
 	            preparedStatement.setString(7, order.getStatoOrdine());
 	            
 	            preparedStatement.executeUpdate();
-	            connection.commit();
+	           
 
 	        } finally {
 	            try {

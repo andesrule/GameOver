@@ -2,6 +2,7 @@ package com.control;
 
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.Collection;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -10,10 +11,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.model.dao.ProductDAO;
-import com.model.javabeans.ProductModel;
+import org.apache.tomcat.util.log.UserDataHelper.Mode;
 
+import com.model.dao.PaymentDAO;
+import com.model.dao.ProductDAO;
+import com.model.dao.UserDAO;
+import com.model.javabeans.ProductModel;
+import com.model.javabeans.UserBean;
+import com.model.javabeans.UserModel;
 import com.model.javabeans.Cart;
+import com.model.javabeans.PaymentModel;
 
 /**
  * Servlet implementation class CartServlet
@@ -24,12 +31,16 @@ public class CartServlet extends HttpServlet {
 
 	
 	static ProductModel model;
+	static UserModel model1;
+	static PaymentModel model2;
 	
 	static boolean isDataSource = true;
 
 	static {
 		if(isDataSource) {
 			model = new ProductDAO();
+			model1 = new UserDAO();
+			model2 = new PaymentDAO();
 		}
 	}
     /**
@@ -68,13 +79,25 @@ public class CartServlet extends HttpServlet {
 				cart.deleteAllProduct(id);
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Cart.jsp");
 				dispatcher.forward(request, response);
-			}
-			else if (action.equalsIgnoreCase("newQuant") && action!=null) {
-				int quantita = Integer.parseInt(request.getParameter("quantita"));
-				int id = Integer.parseInt(request.getParameter("id"));
-				cart.setQuantity(id,quantita);
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Cart.jsp");
+			}else if(action.equalsIgnoreCase("checkout") && action!= null) {
+				
+				//Effettuo il checkout
+				int id= Integer.parseInt(request.getParameter("id"));
+				System.out.println(id);
+				
+				// mi passo l'id dell'utente che vuole effettuare il checkout
+				request.setAttribute("utente", model1.doRetrieveByKey(id));
+				
+				// mi passo il metodo di pagamento dell'utente (se lo ha , nel caso può aggiungerlo collegandosi alla sua area utente)
+				Collection<?> metodi = (Collection<?>) model2.doRetrieveByUser(id);
+				request.setAttribute("metodiUser1",metodi);
+				
+				// mi passo il carrello
+				request.getSession().setAttribute("carrello", cart);
+				
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/EffettuaPagamento.jsp");
 				dispatcher.forward(request, response);
+				
 			}
 			}catch (SQLException e) {
 				System.out.println("Error:" + e.getMessage());
