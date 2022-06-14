@@ -1,6 +1,7 @@
 <!-- DEFINISCO IL CONTAINER PER IL FOOTER -->
 <footer>
         
+        <!-- DEFINISCO IL CONTAINER PER IL LOGO -->
         <div class="logo"><a href="index.jsp"><img src="img/logo.png" alt="logo"></a></div>
         <div class="left">
             <ul>
