@@ -2,13 +2,11 @@
 html, head, body{
     margin: 0%;
     font-family: 'Montserrat', sans-serif;
+    background-color: rgb(77, 77, 77);
     background-image: url(../img/bg.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
 }
 
 .logo2{

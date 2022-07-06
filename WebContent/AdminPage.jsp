@@ -43,7 +43,7 @@
 	<!-- Elenco Giochi pagina Admin -->
 
 
-<%@ include file = "../frammenti/loggedheader.jsp"%>
+<%@ include file = "../frammenti/loggedheadernosearch.jsp"%><br><br><br><br><br><br>
 
 
 <h3>Visualizza Articoli</h3>

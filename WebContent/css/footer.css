@@ -16,6 +16,13 @@ footer{
     padding-right: 150px;
 }
 
+.footcontainer{
+	position: absolute;
+	bottom: 0%;
+	left: 0%; 
+	width: 100%;
+}
+
 .logo1{
     margin-right: 20px;
     align-self: flex-start;

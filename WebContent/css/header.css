@@ -80,8 +80,17 @@ nav{
     border: none;
 }
 
+.usermini img{
+    opacity: 1;
+    transition: all 0.3s ease-in-out;
+}
+.usermini img:hover{
+    opacity: 0.8;
+}
+
 .usermini label{
     color: black;
+    font-weight: bold;
 }
 
 .usermini a{
@@ -172,6 +181,7 @@ nav{
     display: block;
     width: 100%;
     height: 40px;
+    top: 0%;
 }
 
 /*MODIFICO LE PROPRIETA' DELLA BARRA DI RICERCA*/

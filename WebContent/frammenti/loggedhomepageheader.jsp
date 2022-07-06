@@ -34,12 +34,12 @@ UserBean user1 = (UserBean) request.getSession().getAttribute("current_user");%>
 
         <div class="usermini" id="usermini" onmouseleave="hidediv()">
             <p>Ciao, <span><%= user1.getUsername()%></span><br>
-            <a href=""><img src="img/person.png" alt="person"></a><br>
-            <a href="">Vai alla tua area riservata</a><br><br>
+            <a href="personalarea.jsp"><img src="img/gamepad.png" alt="person"></a><br>
+            <a href="personalarea.jsp">Vai alla tua area riservata</a><br><br>
             <span>oppure</span><br><br>
             <a href="LogoutServlet"><button>Esci</button></a></p>
         </div>
-    </nav><br><br><br><br>
+    </nav><br><br><br><br><br>
 
     <!--DEFINISCO IL CONTENITORE DEDICATO ALLO SLIDESHOW-->
     <div class="slider">

@@ -39,22 +39,7 @@ UserBean user1 = (UserBean) request.getSession().getAttribute("current_user");%>
             <span>oppure</span><br><br>
             <a href="LogoutServlet"><button>Esci</button></a></p>
         </div>
-    </nav><br><br><br><br><br>
-
-    <!--DEFINISCO LA SEZIONE DEDICATA ALLA BARRA DI RICERCA-->
-    <div class="searchsection">
-
-        <!--DEFINISCO IL FORM, CON AUTOCOMPLETAMENTO DISATTIVATO-->
-        <form action="" class="searchform" id="searchform" autocomplete="off">
-            <input type="text" name="searchbar" id="searchbar" placeholder="Scrivi qui per cercare...">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-
-
-
-
-    
+    </nav>
     <script src="js/userdiv.js"></script>
 </body>
 </html>

@@ -54,7 +54,7 @@
 				%>	 <!-- post e´ piu´ sicuro di get, non conserva informazioni, utile per pw-->
 
 	<% if(user!=null && user.getAdmin()==1){%>
-		<a href="AdminServlet2?action=mostra">ACCEDI ALLA GESTIONE PRODOTTI E ORDINI</a>
+		<h2 style="text-align: center; margin-top: 40px"><a href="AdminServlet2?action=mostra" class="productaccess">ACCEDI ALLA GESTIONE PRODOTTI E ORDINI</a></h2>
 		<%}%>
 	 	
 	 	

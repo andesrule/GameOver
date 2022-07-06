@@ -77,5 +77,8 @@
 		
 	<%}} %>
 </div> 
+
+	<div class="footcontainer">
+	<%@ include file = "../frammenti/footer.jsp" %></div>
 </body>
 </html>
