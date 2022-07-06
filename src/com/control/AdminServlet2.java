@@ -94,15 +94,11 @@ public class AdminServlet2 extends HttpServlet {
 				String platname = request.getParameter("platform");
 				
 				System.out.println(platname);
-<<<<<<< HEAD
-				String uploadPath = "C:\\Users\\emanu\\Desktop\\GameOver\\WebContent\\img\\" + file.getSubmittedFileName();
-=======
-				String uploadPath = "C:\\Users\\Cosmo\\OneDrive\\Desktop\\Universita\\TSW\\WorkSpaceTSW\\GameOver\\WebContent\\img\\" + file.getSubmittedFileName();
->>>>>>> 08325b2c26935be324398c6d3c1cdc9165325c29
+				String uploadPath = "C:\\Users\\Windows-PC\\Desktop\\sitoWeb2022TSW\\repository\\GameOver\\WebContent\\img\\" + file.getSubmittedFileName();
 				/*
 				 *--> Emanuele P. Path String uploadPath = "C:\Users\emanu\Desktop\GameOver\WebContent\img\\" + file.getSubmittedFileName();
 				 *--> Thomas String uploadPath = "C:\\Users\\Cosmo\\OneDrive\\Desktop\\Universita\\TSW\\WorkSpaceTSW\\GameOver\\WebContent\\img\\" + file.getSubmittedFileName();
-				 *--> Emanuele S. AGGIORNALO String uploadPath = "C:\\Users\\utente\\Desktop\\file TSW\\ProgettiTSW\\GameOver\\img\\" + file.getSubmittedFileName();
+				 *--> Emanuele S. AGGIORNALO String uploadPath = "C:\\Users\\Windows-PC\\Desktop\\sitoWeb2022TSW\\repository\\GameOver\\WebContent\\img\\" + file.getSubmittedFileName();
 				 * */
 				System.out.println(uploadPath);
 				ProductBean bean = new ProductBean();

@@ -43,7 +43,7 @@
 	<!-- Area Utente -->
 
 
-<%@ include file = "../frammenti/header.jsp"%>
+<%@ include file = "../frammenti/loggedheader.jsp"%>
 
 
 <h3>AREA UTENTE</h3>

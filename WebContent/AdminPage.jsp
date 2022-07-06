@@ -10,7 +10,7 @@
 		
 <!DOCTYPE html>
 <html>
-<head><head>
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -28,15 +28,9 @@
 
     <!--IMPORTO IL FILE CSS DEFDICATO AL RESET DELLO STILE DI DEAFULT DELLA PAGINA WEB-->
     <link rel="stylesheet" href="css/default.css">
-
-    <!--IMPORTO IL FILE CSS DEDICATO ALL'HEADER DEL SITO (DELLA HOMEPAGE)-->
-    <link rel="stylesheet" href="css/homepageHeader.css">
     
     <!-- IMPORTO IL FILE CSS RISERVATO ALLA GRIGLIA DEI GIOCHI -->
     <link rel="stylesheet" href="css/grid.css">
-    
-    <!--IMPORTO IL FILE CSS DEDICATO AL FOOTER-->
-    <link rel="stylesheet" href="css/footer.css">
 
     <!--IMPOSTO L'ICONA CHE APPARIRA' AFFIANCO AL TITOLO DEL SITO WEB-->
     <link rel="icon" type="image/x-icon" href="img/faviconTitle.ico">
@@ -49,7 +43,7 @@
 	<!-- Elenco Giochi pagina Admin -->
 
 
-<%@ include file = "../frammenti/header.jsp"%>
+<%@ include file = "../frammenti/loggedheader.jsp"%>
 
 
 <h3>Visualizza Articoli</h3>

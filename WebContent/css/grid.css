@@ -1,3 +1,4 @@
+/*CSS PER LA GRIGLIA DEI VIDEOGICHI*/
 .gamesgrid{
     display: flex;
     border-radius: 30px;
@@ -6,7 +7,7 @@
     padding: 5px;
     align-items: center;
     justify-content: center;
-    background-color: #1B1B1B;
+    background-color: black;
     margin-left: 50px;
     margin-right: 50px;
     margin-top: 50px;
@@ -16,6 +17,7 @@
     width: fit-content;
 }
 
+/*CSS PER IL DIV DEDICATO AI GIOCHI*/
 .game{
     margin: 15px;
 }
@@ -25,7 +27,7 @@ span{
 	color: white;
 }
 
-span.price{
+.price{
 	float: right;
 	font-size: 30px;
 	color: white;

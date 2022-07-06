@@ -1,5 +1,5 @@
+/*CSS PER IL CONTAINER DEL FOOTER*/
 footer{
-    position: relative;
     width: 100%;
     left: 0%;
     bottom: 0%;
@@ -7,70 +7,93 @@ footer{
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    flex-wrap: nowrap;
-    padding: 35px;
+    flex-wrap: wrap;
+    padding: 25px;
     bottom: 0%;
     background-color: black;
+    height: fit-content;
+    padding-left: 100px;
+    padding-right: 150px;
 }
 
-.left{
-    flex: 1 0 auto;
-    margin-top: 40px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.logo{
+.logo1{
+    margin-right: 20px;
     align-self: flex-start;
     opacity: 1;
     transition: all 0.3s ease-in-out;
     width: fit-content;
     height: fit-content;
     cursor: pointer;
+    padding-left: 80px;
 }
 
 .logo:hover{
     opacity: 0.7;
 }
 
-a{
+.aboutus{
+	margin-left: 165px;
+	font-size: 25px;
+}
+
+footer li{
+    margin-top: 20px;
+}
+
+footer a{
     text-decoration: none;
     color: white;
     transition: all 0.3s ease-in-out;
 }
 
-a:hover{
+footer a:hover{
     color: rgb(187, 187, 187);
 }
 
-.link{
-    margin-top: 20px;
+footer span{
+    text-decoration: none;
+    color: white;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+footer span:hover{
+    color: rgb(187, 187, 187);
 }
 
 .social{
-    display: none;
-    align-items: flex-end;
+    margin-top: 30px;
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    align-items: center;
     align-content: center;
     height: fit-content;
     width: fit-content;
-    animation: flipInX;
+    animation: fadeIn;
     animation-duration: 0.5s;
+    padding-left: 200px;
 }
 
-.socialpage li{
+.social li{
     display: inline;
-    margin-right: 50px;
+    margin-right: 150px;
 }
 
 .socialico{
-    width: 45px;
+    width: 50px;
+    opacity: 0.7;
+	transition: all 0.3s ease-in-out;
+	
+    margin-bottom: 50px;
 }
 
 .socialico:hover{
-    animation: pulse;
-    animation-duration: 1s;
+    transform: scale(1.20);
+    opacity: 1;
 }
 
+/*SEZIONE DESTRA DEL FOOTER*/
 .right{
     display: flex;
     flex-direction: column;
@@ -78,6 +101,7 @@ a:hover{
     align-self: center;
     margin-left: auto;
     margin-right: auto;
+    padding: 5px;
 }
 
 /*MODIFICIO LE PROPRIETA' DELLA SEZIONE DEDICATA ALLA BARRA DI RICERCA*/
@@ -85,10 +109,11 @@ a:hover{
     display: block;
     width: 100%;
     height: 40px;
+    margin-top: 10px;
 }
 
 /*MODIFICO LE PROPRIETA' DELLA BARRA DI RICERCA*/
-.searchbar{
+.searchsection input[type=text]{
     float: left;
     outline: none;
     border: 2px solid #757575;
@@ -101,16 +126,12 @@ a:hover{
     transition: all 0.2s ease-in-out;
 }
 
-.searchbar:hover{
-    border: 2px solid white;
-}
-
-.searchbar:focus{
+.searchsection input[type=text]:hover, .searchsection input[type=text]:focus{
     border: 2px solid white;
 }
 
 /*MODIFICO LE PROPRIETA' DELLA LENTE DI INGRANDIMENTO CHE VIENE USATA COME SUBMIT BUTTON*/
-.lensbutton{
+.searchsection button[type=submit]{
     cursor: pointer;
     background-color: black;
     width: 10%;
@@ -121,12 +142,12 @@ a:hover{
     transition: all 0.2s ease-in-out;
 }
 
-.lensbutton:hover{
+.searchsection button[type=submit]:hover{
     color: white;
     border: 2px solid white;
 }
 
-p{
+.right p{
     margin-top: 40px;
     color: white;
 }

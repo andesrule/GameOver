@@ -3,7 +3,9 @@
     
 <%@ page import="java.util. * ,com.model.javabeans.* " %>
 <% ProductBean bean = (ProductBean) request.getAttribute("descrizione"); %>
+<%UserBean user = (UserBean) request.getSession().getAttribute("current_user"); %>
 <!DOCTYPE html>
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -22,15 +24,9 @@
 
     <!--IMPORTO IL FILE CSS DEFDICATO AL RESET DELLO STILE DI DEAFULT DELLA PAGINA WEB-->
     <link rel="stylesheet" href="css/default.css">
-
-    <!--IMPORTO IL FILE CSS DEDICATO ALL'HEADER DEL SITO (DELLA HOMEPAGE)-->
-    <link rel="stylesheet" href="css/homepageHeader.css">
     
     <!-- IMPORTO IL FILE CSS RISERVATO ALLA GRIGLIA DEI GIOCHI -->
     <link rel="stylesheet" href="css/grid.css">
-    
-    <!--IMPORTO IL FILE CSS DEDICATO AL FOOTER-->
-    <link rel="stylesheet" href="css/footer.css">
 
     <!--IMPOSTO L'ICONA CHE APPARIRA' AFFIANCO AL TITOLO DEL SITO WEB-->
     <link rel="icon" type="image/x-icon" href="img/faviconTitle.ico">
@@ -42,8 +38,9 @@
 	
 	<!-- Dettagli gioco -->
 
-
-<%@ include file = "../frammenti/header.jsp"%>
+<%if(user == null) {%>
+	<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
+	<%@ include file = "../frammenti/unloggedheader.jsp"%><%} else{%> <%@ include file="../frammenti/loggedheader.jsp" %> <%} %>
 
 
 <div class="game-title" style="margin: 200px 100px">
@@ -61,5 +58,7 @@
 					
 				</div>
 				</div>
+				
+				<%@include file="../frammenti/footer.jsp" %>
 </body>
 </html>

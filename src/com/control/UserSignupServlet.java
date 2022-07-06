@@ -68,7 +68,7 @@ public class UserSignupServlet extends HttpServlet {
 		try {
 			request.setAttribute("utente_signup_check", "true");
 			model.doSave(bean);
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/LoginPage.jsp");
+			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login.jsp");
 			
 			dispatcher.forward(request, response);
 		} catch (SQLException e) {

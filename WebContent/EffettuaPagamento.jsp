@@ -46,7 +46,11 @@
 
 <body>
 
-<%@ include file = "../frammenti/header.jsp"%>
+
+
+<%if(user == null) {%>
+	<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
+	<%@ include file = "../frammenti/unloggedheader.jsp"%><%} else{%> <%@ include file="../frammenti/loggedheader.jsp" %> <%} %>
 
 
 <!-- Riepilogo dell'ordine + tabella per elencare i metodi di pagamento presenti già o nel caso aggiungere un metodo di pagamento -->

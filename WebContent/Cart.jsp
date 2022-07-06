@@ -8,6 +8,7 @@
     UserBean utente = (UserBean) request.getSession().getAttribute("current_user");
       
 %>
+<%UserBean user = (UserBean) request.getSession().getAttribute("current_user"); %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -45,15 +46,18 @@
 
 <body>
 
-<%@ include file = "../frammenti/header.jsp"%>
+
+<%if(user == null) {%>
+	<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
+	<%@ include file = "../frammenti/unloggedheader.jsp"%><%} else{%> <%@ include file="../frammenti/loggedheader.jsp" %> <%} %>
 
 
 	<!-- Inserimento identificativo del carrello -->
 <% if(utente!=null){%>
 	<h3>BENVENUTO NEL TUO CARRELLO: <%=utente.getUsername()%></h3>
 	<%}else{ %>
-	<p>Se non ha effettuato l'accesso Loggati qui <a href="LoginPage.jsp">LOGIN</a></p>
-	<p>O Registrati qui <a href="Signup.jsp">SIGNUP</a></p>
+	<p>Se non ha effettuato l'accesso Loggati qui <a href="login.jsp">LOGIN</a></p>
+	<p>O Registrati qui <a href="register.jsp">SIGNUP</a></p>
 	<%} %>
 
 	<div class="small-container cart-container">

@@ -1,4 +1,13 @@
-	<!--DEFINISCO IL CONTENITORE DELLA BARRA DI NAVIGAZIONE DEL SITO-->
+<!DOCTYPE html>
+<html>
+<head>
+    <!--IMPORTO IL FILE CSS DEDICATO ALL'HEADER DELLA HOMEPAGE)-->
+    <link rel="stylesheet" href="css/header.css">
+</head>
+
+<body>
+    
+    <!--DEFINISCO IL CONTENITORE DELLA BARRA DI NAVIGAZIONE DEL SITO-->
     <nav>
 
         <!--DEFINISCO LA LISTA CHE CONTIENE  I COLLEGAMENTI ALLE VARIE SEZIONI DEL SITO WEB-->
@@ -8,14 +17,30 @@
             <li class="nav-item logo"><a href="index.jsp"><img src="img/logo.png" alt="logo"></a></li>
 
             <!--DEFINISCO LE ICONE CHE SARANNO UTILIZZATE PER DIRIGERE L'UTENTE ALLE VARIE SEZIONI DEL SITO (PC, PLAYSTATION, XBOX, NINTENDO, WISHLIST, AREA UTENTE, CARRELLO)-->
-            <li class="nav-item platform"><a href="SortPlatformServlet?action=Pc"><img class="navico" src="img/pcico.png" alt="pcico"></a></li>
-            <li class="nav-item platform"><a href="SortPlatformServlet?action=Ps"><img src="img/playstationico.png" alt="playstationico" class="navico"></a></li>
-            <li class="nav-item platform"><a href="SortPlatformServlet?action=Xbox"><img src="img/xboxico.png" alt="xboxico" class="navico"></a></li>
-            <li class="nav-item platform"><a href="SortPlatformServlet?action=Nint"><img src="img/nintendoico.png" alt="nintendoico" class="navico"></a></li>
-            <li class="nav-item"><a href="LoginPage.jsp"><img class="navico" src="img/user.svg" alt="userico"></a></li>
+            <li class="nav-item platform"><a href="SortPlatformServlet?action=Pc"><img class="navico platform" src="img/pcico.png" alt="pcico"></a></li>
+            <li class="nav-item platform"><a href="SortPlatformServlet?action=Ps"><img src="img/playstationico.png" alt="playstationico" class="navico platform"></a></li>
+            <li class="nav-item platform"><a href="SortPlatformServlet?action=Xbox"><img src="img/xboxico.png" alt="xboxico" class="navico platform"></a></li>
+            <li class="nav-item platform"><a href="SortPlatformServlet?action=Nint"><img src="img/nintendoico.png" alt="nintendoico" class="navico platform"></a></li>
+            <li class="nav-item">
+                <img class="navico" id="userbtn1" src="img/user.svg" alt="userico" onclick="showdiv()">
+                <img src="img/user.svg" alt="userico" class="navico" id="userbtn2" onclick="hidediv()">
+            </li>
             <li class="nav-item"><a href="Cart.jsp"><img class="navico" src="img/cart.svg" alt="cartico"></a></li>
         </ul>
-    </nav><br><br><br><br>
+
+        <div class="usermini" id="usermini" onmouseleave="hidediv()">
+            <form action="UserLogServlet" method="post" class="usershow" autocomplete="off">
+                <label for="username">Username</label><input type="text" name="user" id="username" placeholder="John Wick" autofocus required><br>
+                <label for="password">Password</label><input type="password" name="pwd" id="password" minlength="4" maxlength="16" placeholder="********" required>
+                <a href="">Ho dimenticato la password</a><br>
+                <input type="submit" value="Login"><br>
+                <a href="register.jsp">Non hai un account?<br>Clicca qui per crearne uno</a>
+            </form>
+            
+            
+		
+        </div>
+    </nav><br><br><br><br><br>
 
     <!--DEFINISCO IL CONTENITORE DEDICATO ALLO SLIDESHOW-->
     <div class="slider">
@@ -52,31 +77,18 @@
             <span class="dot" onclick="currentSlide(5)"><img src="img/dot.png" alt="dot"></span>
         </div>
     </div>
-    
-
-    <!--DEFINISCO IL CONTENITORE DEDICATO AL SELETTORE DELLA PIATTAFORMA CHE SARA' INVISIBILE QUANDO IL SITO E' APERTO SU UN PC, MA SARA' VISIBILE QUANDO IL SITO SARA' IN VERSIONE MOBILE-->
-    <div class="platformselector">
-
-        <!--DEFINISCO IL FORM DEDICATO ALLA SELEZIONE DELLA PIATTAFORMA DEI GIOCHI (WINDOWS, PLAYSTATION, XBOX NINTENDO)-->
-        <form action="" id="platformselector">
-            <select name="platformenu" id="platformenu" class="platformenu">
-                <option value="windows">WINDOWS</option>
-                <option value="playstation">PLAYSTATION</option>
-                <option value="xbox">XBOX</option>
-                <option value="nintendo">NINTENDO</option>
-            </select>
-            <input type="submit" value="" class="submit">
-        </form>
-    </div>
 
     <!--DEFINISCO LA SEZIONE DEDICATA ALLA BARRA DI RICERCA-->
     <div class="searchsection">
 
         <!--DEFINISCO IL FORM, CON AUTOCOMPLETAMENTO DISATTIVATO-->
-        <form action="" id="searchform" autocomplete="off">
-            <input type="text" name="searchbar" id="searchbar" placeholder="Scrivi qui per cercare..." class="searchbar">
-            <button type="submit" class="lensbutton"><i class="fa fa-search"></i></button>
+        <form action="" class="searchform" id="searchform" autocomplete="off">
+            <input type="text" name="searchbar" id="searchbar" placeholder="Scrivi qui per cercare...">
+            <button type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
     
     <script src="js/slideanimation.js"></script>
+    <script src="js/userdiv.js"></script>
+</body>
+</html>
