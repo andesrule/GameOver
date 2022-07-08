@@ -21,25 +21,31 @@
 
     <!--IMPOSTO L'ICONA CHE APPARIRA' AFFIANCO AL TITOLO DEL SITO WEB-->
     <link rel="icon" type="image/x-icon" href="img/faviconTitle.ico">
-
     <title>Game Over</title>
 </head>
 <body>
-	<div class="logo2"><a href="index.jsp"><img src="img/logo.png"></a></div>
+	<div id="container">
+		<div id="main">
+			<div class="logo2">
+				<a href="index.jsp"><img src="img/logo.png"></a>
+			</div>
     
-    <div class="registercontainer">
-        <h1>Accedi</h1><br>
-            <form name="userform" action="UserLogServlet" method="post" class="loginform" autocomplete="off">
-                <p id="errorUser"></p>
-                <label for="Username">Username</label><br>
-                <input type="text" name="user" id="username" placeholder="sonicboom123" minlenght="8" maxlength="12" autofocus required><br>
-                <p id="errorPass"></p>
-                <label for="password">Password</label><br>
-                <input type="password" name="pwd" id="password" placeholder="********" minlength="4" required><br>
-                <input type="submit" value="Login">
-            </form>
-            <a href="">Hai dimenticato la password?<br>Clicca qui per impostarne  una nuova</a><br>
-            <a href="register.jsp">Non hai un account?<br>Clicca qui per crearne uno</a>
-    </div>
+    		<div class="registercontainer">
+        		<h1>Accedi</h1><br>
+        		<form name="userform" action="UserLogServlet" method="post" class="loginform" autocomplete="off">
+        			<p id="errorUser"></p>
+        			<label for="Username">Username</label><br>
+        			<input type="text" name="user" id="username" placeholder="sonicboom123" minlength="8" maxlength="12" autofocus required><br>
+        			<p id="errorPass"></p>
+        			<label for="password">Password</label><br>
+        			<input type="password" name="pwd" id="password" placeholder="********" minlength="4" required><br>
+        			<input type="submit" value="Login">
+        		</form>
+        	
+        		<a href="">Hai dimenticato la password?<br>Clicca qui per impostarne  una nuova</a><br>
+     			<a href="register.jsp">Non hai un account?<br>Clicca qui per crearne uno</a>
+    		</div>
+		</div>
+	</div>
 </body>
 </html>

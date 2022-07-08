@@ -1,13 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1" import="com.model.javabeans.*, java.util.*"%>
     
-<%	UserBean user = (UserBean) request.getSession().getAttribute("current_user");
+<%UserBean user = (UserBean) request.getSession().getAttribute("current_user");
 	String utente_check= (String)request.getAttribute("utente_non_trovato");
 	String utente_signup_check= (String)request.getAttribute("utente_signup_check");
 	String utente_logout= (String)request.getAttribute("utente_logout");
 	Collection<?> articoli = (Collection<?>)request.getSession().getAttribute("prodotti");
-	String login_check = "true";
- %>
+	String login_check = "true";%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -38,57 +37,41 @@
 </head>
 
 <body>
-	<%if(user == null) {%>
-	<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
-	<%@ include file = "../frammenti/unloggedhomepageheader.jsp"%><%} else{%> <%@ include file="../frammenti/loggedhomepageheader.jsp" %> <%} %>
+	<div id="container">
+		<div id="main">
+			<%if(user == null) {%>
+				<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
+				<%@ include file = "../frammenti/unloggedhomepageheader.jsp"%><%} else{%> <%@ include file="../frammenti/loggedhomepageheader.jsp" %> <%} %>
 
-<%
-					if(utente_check != null && utente_check.equals("true")){
-				%>
+				<%if(utente_check != null && utente_check.equals("true")){%>
+					<div class="alert-danger" role="alert">
+						UTENTE INESISTENTE, RIPROVA O <a href="Signup.jsp">REGISTRATI</a>
+					</div><br><%}%>	 
 				
-				<div class="alert-danger" role="alert">
-				  UTENTE INESISTENTE, RIPROVA O <a href="Signup.jsp">REGISTRATI</a>
-				</div><br>
-				<%
-					}
-				%>	 <!-- post e´ piu´ sicuro di get, non conserva informazioni, utile per pw-->
-
-	<% if(user!=null && user.getAdmin()==1){%>
-		<h2 style="text-align: center; margin-top: 40px"><a href="AdminServlet2?action=mostra" class="productaccess">ACCEDI ALLA GESTIONE PRODOTTI E ORDINI</a></h2>
-		<%}%>
+				<!-- post e´ piu´ sicuro di get, non conserva informazioni, utile per pw-->
+				<%if(user!=null && user.getAdmin()==1){%>
+					<h2 style="text-align: center; margin-top: 40px"><a href="AdminServlet2?action=mostra" class="productaccess">ACCEDI ALLA GESTIONE PRODOTTI E ORDINI</a></h2><%}%>
 	 	
-	 	
-	
-
- 	<div class="gamesgrid" >
-       	
-		<% if(articoli != null && articoli.size()!=0){
-		
-			Iterator<?> it =articoli.iterator();
-			while(it.hasNext()){
-				ProductBean bean = (ProductBean)it.next();	
-			%>
-		
-         
-		<div class="game">
-			<a href="ProductsServlet?action=dettagli&id=<%= bean.getId() %> "><img class="cover" src="./img/<%= bean.getImg().substring(bean.getImg().lastIndexOf("img")+4) %>" ></a>
-				<div class="game-title">
-					<div class="game-price">
-						<p><span><%= bean.getNome() %></span>        <span class="price"><%= bean.getPrezzo() %>&euro;</span></p><br>
-		 		
-		 				<!--  va bene ma implementa con js-->  
-						<%if(user!=null && user.getAdmin()==1){%>
-							<a style="color:red" href="AdminServlet2?action=removeFromDB&IdBean=<%=bean.getId()%>">Rimuovi dal Database</a>
-						<% } %> 
-					
-				
+	 		<div class="gamesgrid" >
+       			<%if(articoli != null && articoli.size()!=0){
+					Iterator<?> it =articoli.iterator();
+					while(it.hasNext()){
+						ProductBean bean = (ProductBean)it.next();%>
+				<div class="game">
+					<a href="ProductsServlet?action=dettagli&id=<%=bean.getId()%> "><img class="cover" src="./img/<%=bean.getImg().substring(bean.getImg().lastIndexOf("img")+4)%>"></a>
+					<div class="game-title">
+						<div class="game-price">
+							<p><span><%=bean.getNome()%></span>        <span class="price"><%= bean.getPrezzo() %>&euro;</span></p><br>
+		 					<!--  va bene ma implementa con js-->  
+							<%if(user!=null && user.getAdmin()==1){%>
+								<a style="color:red" href="AdminServlet2?action=removeFromDB&IdBean=<%=bean.getId()%>">Rimuovi dal Database</a><%}%> 
+						</div>
 		 			</div>
-		 		</div>
+				</div><%}}%>
+			</div> 
 		</div>
-		<%}} %>
-	</div> 
-	
-	<%@ include file = "../frammenti/footer.jsp" %>	
-		
+	</div>
+
+	<%@ include file="../frammenti/footer.jsp" %>	
 </body>
 </html>

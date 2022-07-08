@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 pageEncoding="ISO-8859-1" import="java.util.*,com.model.javabeans.*"%>
-<%
-UserBean user1 = (UserBean) request.getSession().getAttribute("current_user");%>
+<%UserBean user1 = (UserBean) request.getSession().getAttribute("current_user");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,17 +28,18 @@ UserBean user1 = (UserBean) request.getSession().getAttribute("current_user");%>
                 <img class="navico" id="userbtn1" src="img/user.svg" alt="userico" onclick="showdiv()">
                 <img src="img/user.svg" alt="userico" class="navico" id="userbtn2" onclick="hidediv()">
             </li>
-            <li class="nav-item"><a href="Cart.jsp"><img class="navico" src="img/cart.svg" alt="cartico"></a></li>
+            <li class="nav-item"><a href="cart.jsp"><img class="navico" src="img/cart.svg" alt="cartico"></a></li>
         </ul>
 
         <div class="usermini" id="usermini" onmouseleave="hidediv()">
-            <p>Ciao, <span><%=user1.getUsername() %></span><br>
+            <p>Ciao, <span><%=user1.getUsername()%></span><br>
             <a href="personalarea.jsp"><img src="img/gamepad.png" alt="person"></a><br>
             <a href="personalarea.jsp">Vai alla tua area riservata</a><br><br>
             <span>oppure</span><br><br>
             <a href="LogoutServlet"><button>Esci</button></a></p>
         </div>
-    </nav>
+    </nav><br><br><br><br><br><br>
+    
     <script src="js/userdiv.js"></script>
 </body>
 </html>

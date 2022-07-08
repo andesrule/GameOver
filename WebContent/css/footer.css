@@ -1,26 +1,19 @@
-/*CSS PER IL CONTAINER DEL FOOTER*/
 footer{
+	background-color: black;
+	posiiton: relative;
+	height: fit-content;
+	margin-top: -100px;
+	clear: both;
     width: 100%;
-    left: 0%;
-    bottom: 0%;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
     padding: 25px;
-    bottom: 0%;
     background-color: black;
-    height: fit-content;
     padding-left: 100px;
     padding-right: 150px;
-}
-
-.footcontainer{
-	position: absolute;
-	bottom: 0%;
-	left: 0%; 
-	width: 100%;
 }
 
 .logo1{
@@ -112,7 +105,7 @@ footer span:hover{
 }
 
 /*MODIFICIO LE PROPRIETA' DELLA SEZIONE DEDICATA ALLA BARRA DI RICERCA*/
-.searchsection{
+.searchsection1{
     display: block;
     width: 100%;
     height: 40px;
@@ -120,7 +113,7 @@ footer span:hover{
 }
 
 /*MODIFICO LE PROPRIETA' DELLA BARRA DI RICERCA*/
-.searchsection input[type=text]{
+.searchsection1 input[type=text]{
     float: left;
     outline: none;
     border: 2px solid #757575;
@@ -133,12 +126,12 @@ footer span:hover{
     transition: all 0.2s ease-in-out;
 }
 
-.searchsection input[type=text]:hover, .searchsection input[type=text]:focus{
+.searchsection1 input[type=text]:hover, .searchsection1 input[type=text]:focus{
     border: 2px solid white;
 }
 
 /*MODIFICO LE PROPRIETA' DELLA LENTE DI INGRANDIMENTO CHE VIENE USATA COME SUBMIT BUTTON*/
-.searchsection button[type=submit]{
+.searchsection1 button[type=submit]{
     cursor: pointer;
     background-color: black;
     width: 10%;
@@ -149,7 +142,7 @@ footer span:hover{
     transition: all 0.2s ease-in-out;
 }
 
-.searchsection button[type=submit]:hover{
+.searchsection1 button[type=submit]:hover{
     color: white;
     border: 2px solid white;
 }

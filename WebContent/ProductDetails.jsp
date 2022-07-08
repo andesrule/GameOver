@@ -35,30 +35,26 @@
 
 <body>
 
+	<div id="container">
+		<div id="main">
+			<%if(user == null) {%>
+			<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
+			<%@include file = "../frammenti/unloggedheader.jsp"%><%} else{%> <%@ include file="../frammenti/loggedheader.jsp" %><%}%>
+			<div class="game-title" style="margin: 200px 100px">
+				<img class="copertina" src="./img/<%= bean.getImg().substring(bean.getImg().lastIndexOf("img")+4) %>" width=510px><br><br>
+				
+				<div class="game-price">
+					<p style="font-size: 30px"><mark><%= bean.getNome() %></mark></p>
+					<p>Prezzo: <%= bean.getPrezzo() %> Euro</p>		
+					<p>Descrizione: <br> <%= bean.getDescr() %></p>
+				
+					<input type="number" name="quantity" placeholder="Quantity"/>
+					<a href="CartServlet?action=addcart&id=<%=bean.getId()%>" id="put-in-cart">Aggiungi Al Carrello</a>
+				</div>
+			</div>
+		</div>
+	</div>
 	
-	<!-- Dettagli gioco -->
-
-<%if(user == null) {%>
-	<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
-	<%@ include file = "../frammenti/unloggedheader.jsp"%><%} else{%> <%@ include file="../frammenti/loggedheader.jsp" %> <%} %>
-
-
-<div class="game-title" style="margin: 200px 100px">
-	<img class="copertina" src="./img/<%= bean.getImg().substring(bean.getImg().lastIndexOf("img")+4) %>" width=510px >
-		<br><br>
-		
-			<div class="game-price">
-			<p style="font-size: 30px"><mark><%= bean.getNome() %></mark></p>
-				<p>Prezzo: <%= bean.getPrezzo() %> Euro</p>		
-				<p>Descrizione: <br> <%= bean.getDescr() %></p>
-				
-				
-				<input type="number" name="quantity" placeholder="Quantity"/>
-				<a href="CartServlet?action=addcart&id=<%=bean.getId()%>" id="put-in-cart">Aggiungi Al Carrello</a>
-					
-				</div>
-				</div>
-				
-				<%@include file="../frammenti/footer.jsp" %>
+	<%@ include file="../frammenti/footer.jsp" %>
 </body>
 </html>

@@ -1,0 +1,96 @@
+.creditcard{
+    position: relative;
+    background-image: url(../img/cardbg.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 200px;
+    width: 400px;
+    border-radius: 20px;
+    padding: 30px;
+    font-family: 'Roboto Mono', monospace;
+}
+
+.nomecontainer{
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    height: 35px;
+    color: white;
+    padding-bottom: 20px;
+}
+
+.name{
+    text-align: center;
+    top: 90%;
+    position: absolute;
+}
+
+.numbercard{
+    position: absolute;
+    top: 22%;
+}
+
+.numbercard p{
+    color: white;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.name p{
+    font-size: 25px;
+}
+
+.chipcontainer{
+    position: absolute;
+    top: 10%;
+}
+
+.chipcontainer img{
+    width: 60px;
+}
+
+.expiresdate{
+    position: absolute;
+    top: 55%;
+    left: 35%;
+}
+
+.expiresdate p{
+    color: white;
+    font-size: 15px;
+}
+
+.expiresdate span{
+    position: absolute;
+    top: 30%;
+    margin-left: 20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.banklogo{
+    position: absolute;
+    right: 5%;
+}
+
+.banklogo img{
+    width: 50px;
+}
+
+.cvv{
+    position: absolute;
+    height: fit-content;
+    top: 73%;
+    right: 10%;
+}
+
+.cvv p{
+    font-size: 18px;
+    color: white;
+}
+
+.cvv span{
+    font-size: 24px;
+    font-weight: bold;
+}

@@ -1,17 +1,14 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1" import="java.util.*,com.model.javabeans.*"%>
-<%UserBean user1 = (UserBean) request.getSession().getAttribute("current_user");%>
 <!DOCTYPE html>
 <html>
 <head>
-    <!--IMPORTO IL FILE CSS DEDICATO ALL'HEADER DELLA HOMEPAGE)-->
+    <!--IMPORTO IL FILE CSS DEDICATO ALL'HEADER-->
     <link rel="stylesheet" href="css/header.css">
 </head>
 
 <body>
 
-<!-- CONTAINER DELLA BARRA DI NAVIGAZIONE -->
-<nav>
+	<!-- CONTAINER DELLA BARRA DI NAVIGAZIONE -->
+	<nav>
 
         <!--DEFINISCO LA LISTA CHE CONTIENE  I COLLEGAMENTI ALLE VARIE SEZIONI DEL SITO WEB-->
         <ul class="nav-list">
@@ -32,23 +29,15 @@ pageEncoding="ISO-8859-1" import="java.util.*,com.model.javabeans.*"%>
         </ul>
 
         <div class="usermini" id="usermini" onmouseleave="hidediv()">
-            <p>Ciao, <span><%=user1.getUsername()%></span><br>
-            <a href="personalarea.jsp"><img src="img/gamepad.png" alt="person"></a><br>
-            <a href="personalarea.jsp">Vai alla tua area riservata</a><br><br>
-            <span>oppure</span><br><br>
-            <a href="LogoutServlet"><button>Esci</button></a></p>
+            <form action="UserLogServlet" method="post" class="usershow" autocomplete="off">
+                <label for="username">Username</label><input type="text" name="user" id="username" placeholder="John Wick" autofocus required><br>
+                <label for="password">Password</label><input type="password" name="pwd" id="password" minlength="4" maxlength="16" placeholder="********" required>
+                <a href="">Ho dimenticato la password</a><br>
+                <input type="submit" value="Login"><br>
+                <a href="register.jsp">Non hai un account?<br>Clicca qui per crearne uno</a>
+            </form>
         </div>
-    </nav><br><br><br><br><br>
-
-    <!--DEFINISCO LA SEZIONE DEDICATA ALLA BARRA DI RICERCA-->
-    <div class="searchsection2">
-
-        <!--DEFINISCO IL FORM, CON AUTOCOMPLETAMENTO DISATTIVATO-->
-        <form action="" class="searchform" id="searchform" autocomplete="off">
-            <input type="text" name="searchbar" id="searchbar" placeholder="Scrivi qui per cercare...">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
+    </nav><br><br><br><br><br><br>
     
     <script src="js/userdiv.js"></script>
 </body>

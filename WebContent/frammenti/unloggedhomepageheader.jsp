@@ -25,7 +25,7 @@
                 <img class="navico" id="userbtn1" src="img/user.svg" alt="userico" onclick="showdiv()">
                 <img src="img/user.svg" alt="userico" class="navico" id="userbtn2" onclick="hidediv()">
             </li>
-            <li class="nav-item"><a href="Cart.jsp"><img class="navico" src="img/cart.svg" alt="cartico"></a></li>
+            <li class="nav-item"><a href="cart.jsp"><img class="navico" src="img/cart.svg" alt="cartico"></a></li>
         </ul>
 
         <div class="usermini" id="usermini" onmouseleave="hidediv()">

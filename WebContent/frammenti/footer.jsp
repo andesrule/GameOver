@@ -1,13 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <!--IMPORTO IL FILE CSS DEDICATO AL FOOTER-->
-        <link rel="stylesheet" href="css/footer.css">
-    </head>
+<html>
+<head>
+    <link rel="stylesheet" href="css/footer.css">
+</head>
 <body>
-    <footer>
-        
-        <!-- DEFINISCO IL CONTAINER PER IL LOGO -->
+<footer>
+	<!-- DEFINISCO IL CONTAINER PER IL LOGO -->
         <div class="logo1"><a href="index.jsp"><img src="img/logo.png" alt="logo"></a></div>
         
         <!-- SEZIONE SINISTRA DEL FOOTER -->
@@ -18,7 +16,6 @@
                 <li><a href="" class="aboutus"><b>Su di noi</b></a></li>
             </ul>
             
-            <!-- DIV CHE CONTIENE I SOCIAL (NASCOSTO) -->
             <div class="social" id="social">
                 <ul>
                     <li><a href=""><img src="img/ig.png" alt="igico" class="socialico"></a></li>
@@ -32,7 +29,7 @@
         <div class="right">
         
             <!--DEFINISCO LA SEZIONE DEDICATA ALLA BARRA DI RICERCA-->
-            <div class="searchsection">
+            <div class="searchsection1">
 
                 <!--DEFINISCO IL FORM, CON AUTOCOMPLETAMENTO DISATTIVATO-->
                 <form action="" id="searchform" autocomplete="off">
@@ -43,6 +40,6 @@
             <p>Leggi la nostra informativa sulla <a class="link" href="https://www.privacypolicies.com/live/5dda9b97-d8b3-4092-9f24-5fbc23c2842c" target="_blank"><b>PRIVACY</b></a></p>
             <p>Hai bisogno di aiuto? Puoi contattarci scrivendoci <a href="mailto:developer.site2022@hotmail.com?subject=[RICHIESTA%20DI%20AIUTO]"><b>QUI</b></a></p>
         </div>
-    </footer>
+</footer>
 </body>
 </html>

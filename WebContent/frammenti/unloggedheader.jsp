@@ -7,8 +7,8 @@
 
 <body>
 
-<!-- CONTAINER DELLA BARRA DI NAVIGAZIONE -->
-<nav>
+	<!-- CONTAINER DELLA BARRA DI NAVIGAZIONE -->
+	<nav>
 
         <!--DEFINISCO LA LISTA CHE CONTIENE  I COLLEGAMENTI ALLE VARIE SEZIONI DEL SITO WEB-->
         <ul class="nav-list">
@@ -25,7 +25,7 @@
                 <img class="navico" id="userbtn1" src="img/user.svg" alt="userico" onclick="showdiv()">
                 <img src="img/user.svg" alt="userico" class="navico" id="userbtn2" onclick="hidediv()">
             </li>
-            <li class="nav-item"><a href="Cart.jsp"><img class="navico" src="img/cart.svg" alt="cartico"></a></li>
+            <li class="nav-item"><a href="cart.jsp"><img class="navico" src="img/cart.svg" alt="cartico"></a></li>
         </ul>
 
         <div class="usermini" id="usermini" onmouseleave="hidediv()">
@@ -40,7 +40,7 @@
     </nav><br><br><br><br><br>
 
     <!--DEFINISCO LA SEZIONE DEDICATA ALLA BARRA DI RICERCA-->
-    <div class="searchsection">
+    <div class="searchsection2">
 
         <!--DEFINISCO IL FORM, CON AUTOCOMPLETAMENTO DISATTIVATO-->
         <form action="" class="searchform" id="searchform" autocomplete="off">
@@ -48,10 +48,6 @@
             <button type="submit"><i class="fa fa-search"></i></button>
         </form>
     </div>
-
-
-
-
     
     <script src="js/userdiv.js"></script>
 </body>

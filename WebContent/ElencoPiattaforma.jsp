@@ -1,11 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1" import="java.util.*, com.model.javabeans.*"
-    pageEncoding="ISO-8859-1"%>
-    
-    <%
-  Collection<?> articoli = (Collection<?>) request.getAttribute("articoliPiattaforma");
-
-  %>
-  <%UserBean user = (UserBean) request.getSession().getAttribute("current_user"); %>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1" import="java.util.*, com.model.javabeans.*" pageEncoding="ISO-8859-1"%>
+<%Collection<?> articoli = (Collection<?>) request.getAttribute("articoliPiattaforma");%>
+<%UserBean user = (UserBean) request.getSession().getAttribute("current_user");%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,53 +27,39 @@
     
     <!-- IMPORTO IL FILE CSS RISERVATO ALLA GRIGLIA DEI GIOCHI -->
     <link rel="stylesheet" href="css/grid.css">
-    
-    <!--IMPORTO IL FILE CSS DEDICATO AL FOOTER-->
-    <link rel="stylesheet" href="css/footer.css">
 
     <!--IMPOSTO L'ICONA CHE APPARIRA' AFFIANCO AL TITOLO DEL SITO WEB-->
     <link rel="icon" type="image/x-icon" href="img/faviconTitle.ico">
-    
     <title>Game Over</title>
 </head>
-
 <body>
-
-	
-	<!-- Elenco Giochi per Piattaforma -->
-
-	<!-- INCLUDO FILE HEADER -->
-	<%if(user == null) {%>
-	<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
-	<%@ include file = "../frammenti/unloggedheader.jsp"%><%} else{%> <%@ include file="../frammenti/loggedheader.jsp" %> <%} %>
-
-	<!-- CONTAINER GRIGLIA DEI VIDEOGIOCHI -->
- 	<div class="gamesgrid" >
-       	
-		<% if(articoli != null && articoli.size()!=0){
+	<div id="container">
+		<div id="main">
+			<!-- INCLUDO FILE HEADER -->
+			<%if(user == null) {%>
+			<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
+				<%@include file = "../frammenti/unloggedheader.jsp"%><%} else{%><%@ include file="../frammenti/loggedheader.jsp" %><%}%>
+			<!-- CONTAINER GRIGLIA DEI VIDEOGIOCHI -->
+ 			<div class="gamesgrid" >
+       			<%if(articoli != null && articoli.size()!=0){
+       				Iterator<?> it =articoli.iterator();
+					while(it.hasNext()){
+						ProductBean bean = (ProductBean)it.next();%>
 		
-			Iterator<?> it =articoli.iterator();
-			while(it.hasNext()){
-			ProductBean bean = (ProductBean)it.next();	
-		
-		%>
-		
-		<!-- CONTAINER SINGOLO VIDEOGIOCO -->
-		<div class="game">
-			<a href="ProductsServlet?action=dettagli&id=<%= bean.getId() %> "><img class="cover" src="./img/<%= bean.getImg().substring(bean.getImg().lastIndexOf("img")+4) %>" ></a>
-			
-			<!-- INFO VIDEOGIOCHI (NOME, PREZZO) -->
-			<div class="game-title">
-				<div class="game-price">
-					<p><span><%= bean.getNome() %></span>        <span class="price"><%= bean.getPrezzo() %>&euro;</span></p><br>	
-		 		</div>
-		 	</div>
+				<!-- CONTAINER SINGOLO VIDEOGIOCO -->
+				<div class="game">
+					<a href="ProductsServlet?action=dettagli&id=<%= bean.getId() %> "><img class="cover" src="./img/<%= bean.getImg().substring(bean.getImg().lastIndexOf("img")+4) %>" ></a>
+						<!-- INFO VIDEOGIOCHI (NOME, PREZZO) -->
+						<div class="game-title">
+							<div class="game-price">
+								<p><span><%=bean.getNome()%></span>        <span class="price"><%=bean.getPrezzo()%>&euro;</span></p><br>	
+		 					</div>
+		 				</div>
+				</div><%}}%>
+			</div>
 		</div>
-		
-	<%}} %>
-</div> 
-
-	<div class="footcontainer">
-	<%@ include file = "../frammenti/footer.jsp" %></div>
+	</div>
+	
+	<%@ include file="../frammenti/footer.jsp" %>
 </body>
 </html>
