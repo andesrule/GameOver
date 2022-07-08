@@ -21,6 +21,12 @@
 
     <!--IMPOSTO L'ICONA CHE APPARIRA' AFFIANCO AL TITOLO DEL SITO WEB-->
     <link rel="icon" type="image/x-icon" href="img/faviconTitle.ico">
+    
+    <!--IMPORTO FILE E LIBRERIE JS, AJAX E JQUERY  -->
+    <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/validation.js"></script>
+    
     <title>Game Over</title>
 </head>
 <body>
@@ -32,16 +38,15 @@
     
     		<div class="registercontainer">
         		<h1>Accedi</h1><br>
-        		<form name="userform" action="UserLogServlet" method="post" class="loginform" autocomplete="off">
-        			<p id="errorUser"></p>
+        		<form class="loginform" autocomplete="off" id="form">
         			<label for="Username">Username</label><br>
-        			<input type="text" name="user" id="username" placeholder="sonicboom123" minlength="8" maxlength="12" autofocus required><br>
-        			<p id="errorPass"></p>
+        			<input type="text" name="user" id="username" placeholder="sonicboom123" maxlength="12" ><br>
+        			<p id="errorPass1">Errore... non inserire caratteri speciali($%&/...)</p>
         			<label for="password">Password</label><br>
-        			<input type="password" name="pwd" id="password" placeholder="********" minlength="4" required><br>
-        			<input type="submit" value="Login">
-        		</form>
-        	
+        			<input type="password" name="pwd" id="password" placeholder="********" ><br>
+        			<p id="errorPass2">Il campo vuoto inserisci qualcosa</p>
+        			<input type="submit" value="Login" id="submit">
+        	</form>
         		<a href="">Hai dimenticato la password?<br>Clicca qui per impostarne  una nuova</a><br>
      			<a href="register.jsp">Non hai un account?<br>Clicca qui per crearne uno</a>
     		</div>

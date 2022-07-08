@@ -1,30 +1,46 @@
 $(document)
 		.ready(
 				function() {
+
+					$('#username').focus(function(e) {
+						$('#errorPass1').css("display", "none");
+					});
+					$('#password').focus(function(e) {
+						$('#errorPass2').css("display", "none");
+					});
+
 					var countError1 = 0;
 					var countError2 = 0;
+					var countError3 = 0;
+
 					$('#submit')
 							.click(
 									function(e) {
-										
+
 										e.preventDefault();
 										var user = $('#username').val();
 										var pwd = $('#password').val();
+
 										var userValid = /^[0-9a-zA-Z]+$/;
 
-										
-										
 										if (!(user.match(userValid))
 												&& countError1 < 1) {
 											countError1 += 1;
-											$("#username")
-													.after(
-															"<b><p id=UserError style='color: red;'>Username Invalido (non inserire caratteri speciali)</p></b> <br>");
+											$('#errorPass1').show();
+
 										}
-										
+
+										if (pwd.match("") && countError2 < 1) {
+											countError2 += 1;
+											$('#errorPass2').show();
+
+										}
+
 										if (user.match(userValid)) {
-											$("#UserError").remove();
-											$.ajax({
+											$("#errorPass1").remove();
+											$("#errorPass2").remove();
+											$
+													.ajax({
 														url : 'UserLogServlet',
 														type : 'Post',
 														data : {
@@ -40,8 +56,8 @@ $(document)
 																				'href',
 																				'index.jsp');
 															} else if (result == 'No'
-																	&& countError2 < 1) {
-																countError2 += 1;
+																	&& countError3 < 1) {
+																countError3 += 1;
 																$("#password")
 																		.after(
 																				"<b><p id=erroreUtente style='color: red;'>Utente non trovato...Controlla username o password</p></b> <br>");
