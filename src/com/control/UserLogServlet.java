@@ -1,6 +1,7 @@
 package com.control;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
@@ -42,7 +43,7 @@ public class UserLogServlet extends HttpServlet {
 		
 		String username = request.getParameter("user");
 		String password = request.getParameter("pwd");
-		
+		PrintWriter out = response.getWriter();
 		
 		
 		try {
@@ -52,18 +53,18 @@ public class UserLogServlet extends HttpServlet {
 			if(bean.getUsername()==null || bean.getPassword()==null || !bean.getUsername().equals(username) || (bean.getUsername().equals("") || bean.getPassword().equals("")) ) { /*se per qualunque caso nel DB sarà presente un utente con stringhe vuote, esso non sarà preso in considerazione*/
 				// non esiste
 				System.out.println("Utente Non Trovato");
-				request.setAttribute("utente_non_trovato", "true");
+				request.getSession().setAttribute("utente_non_trovato", "true");
 				
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/LoginPage.jsp");
-				dispatcher.forward(request, response);
+				out.print("No");
+				
 			}
 			else {
 				// login avvenuto con successo
 				request.getSession().setAttribute("current_user", bean);
 				request.setAttribute("utente_non_trovato", "false");
 				
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
-				dispatcher.forward(request, response);
+				response.setContentType("text/html");
+				response.getWriter().write("Ok");
 			}
 		} catch (SQLException e) {
 			System.out.println("Utente Non Trovato, RIPROVARE!");

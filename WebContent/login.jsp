@@ -21,6 +21,12 @@
 
     <!--IMPOSTO L'ICONA CHE APPARIRA' AFFIANCO AL TITOLO DEL SITO WEB-->
     <link rel="icon" type="image/x-icon" href="img/faviconTitle.ico">
+    
+    <!--IMPORTO FILE E LIBRERIE JS, AJAX E JQUERY  -->
+    <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/validation.js"></script>
+    
     <title>Game Over</title>
 </head>
 <body>
@@ -32,14 +38,14 @@
     
     		<div class="registercontainer">
         		<h1>Accedi</h1><br>
-        		<form name="userform" action="UserLogServlet" method="post" class="loginform" autocomplete="off">
+        		<form method="post" class="loginform" autocomplete="off" id="form">
         			<p id="errorUser"></p>
         			<label for="Username">Username</label><br>
-        			<input type="text" name="user" id="username" placeholder="sonicboom123" minlength="8" maxlength="12" autofocus required><br>
+        			<input type="text" name="user" id="username" placeholder="sonicboom123" maxlength="12"  required><br>
         			<p id="errorPass"></p>
         			<label for="password">Password</label><br>
         			<input type="password" name="pwd" id="password" placeholder="********" minlength="4" required><br>
-        			<input type="submit" value="Login">
+        			<input type="submit" value="Login" id="submit">
         		</form>
         	
         		<a href="">Hai dimenticato la password?<br>Clicca qui per impostarne  una nuova</a><br>

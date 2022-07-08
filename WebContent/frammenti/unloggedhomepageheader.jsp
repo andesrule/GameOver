@@ -3,6 +3,12 @@
 <head>
     <!--IMPORTO IL FILE CSS DEDICATO ALL'HEADER DELLA HOMEPAGE)-->
     <link rel="stylesheet" href="css/header.css">
+    
+	<!--IMPORTO FILE E LIBRERIE JS, AJAX E JQUERY  -->
+    <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script src="js/validation.js"></script>
+    
 </head>
 
 <body>
@@ -29,11 +35,11 @@
         </ul>
 
         <div class="usermini" id="usermini" onmouseleave="hidediv()">
-            <form action="UserLogServlet" method="post" class="usershow" autocomplete="off">
+            <form action="UserLogServlet" method="post" class="usershow" autocomplete="off" id="form">
                 <label for="username">Username</label><input type="text" name="user" id="username" placeholder="John Wick" autofocus required><br>
                 <label for="password">Password</label><input type="password" name="pwd" id="password" minlength="4" maxlength="16" placeholder="********" required>
                 <a href="">Ho dimenticato la password</a><br>
-                <input type="submit" value="Login"><br>
+                <input type="submit" value="Login" id="submit"><br>
                 <a href="register.jsp">Non hai un account?<br>Clicca qui per crearne uno</a>
             </form>
             
