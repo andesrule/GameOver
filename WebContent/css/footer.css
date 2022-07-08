@@ -104,49 +104,6 @@ footer span:hover{
     padding: 5px;
 }
 
-/*MODIFICIO LE PROPRIETA' DELLA SEZIONE DEDICATA ALLA BARRA DI RICERCA*/
-.searchsection1{
-    display: block;
-    width: 100%;
-    height: 40px;
-    margin-top: 10px;
-}
-
-/*MODIFICO LE PROPRIETA' DELLA BARRA DI RICERCA*/
-.searchsection1 input[type=text]{
-    float: left;
-    outline: none;
-    border: 2px solid #757575;
-    background-color: black;
-    color: white;
-    font-size: 25px;
-    width: 90%;
-    height: 40px;
-    padding: 15px;
-    transition: all 0.2s ease-in-out;
-}
-
-.searchsection1 input[type=text]:hover, .searchsection1 input[type=text]:focus{
-    border: 2px solid white;
-}
-
-/*MODIFICO LE PROPRIETA' DELLA LENTE DI INGRANDIMENTO CHE VIENE USATA COME SUBMIT BUTTON*/
-.searchsection1 button[type=submit]{
-    cursor: pointer;
-    background-color: black;
-    width: 10%;
-    height: 40px;
-    font-size: 20px;
-    color: #757575;
-    border: 2px solid #757575;
-    transition: all 0.2s ease-in-out;
-}
-
-.searchsection1 button[type=submit]:hover{
-    color: white;
-    border: 2px solid white;
-}
-
 .right p{
     margin-top: 40px;
     color: white;

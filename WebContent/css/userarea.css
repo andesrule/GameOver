@@ -1,5 +1,7 @@
 html, head, body{
     margin: 0%;
+	height: 100%;
+	width: 100%;
     font-family: 'Montserrat', sans-serif;
     background-color: rgb(77, 77, 77);
     background-image: url(../img/bg.png);
@@ -78,4 +80,24 @@ html, head, body{
 .userinfo p{
     color: white;
     font-size: 27px;
+}
+
+.userinfo span{
+	color: white;
+	border-radius: 8px;
+}
+
+
+
+
+*,
+*:before,
+*:after {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	text-decoration: none;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }

@@ -39,7 +39,7 @@ pageEncoding="ISO-8859-1" import="java.util.*,com.model.javabeans.*"%>
         <div class="main">
             <%if(user4 == null) {%>
 				<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
-				<%@ include file = "../frammenti/unloggedheadernosearch.jsp"%><%} else{%> <%@ include file="../frammenti/loggedheadernosearch.jsp" %> <%} %>
+				<%@ include file = "../frammenti/unloggedheader.jsp"%><%} else{%> <%@ include file="../frammenti/loggedheader.jsp" %> <%} %>
             <div class="containercart">
                 <div class="cartcontainer">
                     <div class="product">

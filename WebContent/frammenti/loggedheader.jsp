@@ -39,16 +39,6 @@ pageEncoding="ISO-8859-1" import="java.util.*,com.model.javabeans.*"%>
             <a href="LogoutServlet"><button>Esci</button></a></p>
         </div>
     </nav><br><br><br><br><br>
-
-    <!--DEFINISCO LA SEZIONE DEDICATA ALLA BARRA DI RICERCA-->
-    <div class="searchsection2">
-
-        <!--DEFINISCO IL FORM, CON AUTOCOMPLETAMENTO DISATTIVATO-->
-        <form action="" class="searchform" id="searchform" autocomplete="off">
-            <input type="text" name="searchbar" id="searchbar" placeholder="Scrivi qui per cercare...">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
     
     <script src="js/userdiv.js"></script>
 </body>

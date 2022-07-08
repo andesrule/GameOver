@@ -176,91 +176,6 @@ nav{
     overflow: hidden;
 }
 
-/*MODIFICIO LE PROPRIETA' DELLA SEZIONE DEDICATA ALLA BARRA DI RICERCA*/
-.searchsection{
-    display: block;
-    width: 100%;
-    height: 40px;
-    top: 0%;
-}
-
-/*MODIFICO LE PROPRIETA' DELLA BARRA DI RICERCA*/
-.searchsection input[type=text]{
-    float: left;
-    outline: none;
-    border: 2px solid #757575;
-    background-color: black;
-    padding: 20px;
-    color: white;
-    font-size: 25px;
-    width: 95%;
-    height: 40px;
-    transition: all 0.2s ease-in-out;
-}
-
-.searchsection input[type=text]:hover, .searchsection input[type=text]:focus{
-    border: 2px solid white;
-}
-
-/*MODIFICO LE PROPRIETA' DELLA LENTE DI INGRANDIMENTO CHE VIENE USATA COME SUBMIT BUTTON*/
-.searchsection button[type=submit]{
-    cursor: pointer;
-    background-color: black;
-    width: 5%;
-    padding: 10px;
-    height: 44px;
-    font-size: 20px;
-    color: #757575;
-    border: 2px solid #757575;
-    transition: all 0.2s ease-in-out;
-}
-
-.searchsection button[type=submit]:hover{
-    color: white;
-    border: 2px solid white;
-}
-
-.searchsection2{
-	display: block;
-    width: 100%;
-    height: 40px;
-    margin-top: 1.9px;
-}
-
-.searchsection2 input[type=text]{
-    float: left;
-    outline: none;
-    border: 2px solid #757575;
-    background-color: black;
-    padding: 20px;
-    color: white;
-    font-size: 25px;
-    width: 95%;
-    height: 40px;
-    transition: all 0.2s ease-in-out;
-}
-
-.searchsection2 input[type=text]:hover, .searchsection2 input[type=text]:focus{
-    border: 2px solid white;
-}
-
-.searchsection2 button[type=submit]{
-    cursor: pointer;
-    background-color: black;
-    width: 5%;
-    padding: 10px;
-    height: 44px;
-    font-size: 20px;
-    color: #757575;
-    border: 2px solid #757575;
-    transition: all 0.2s ease-in-out;
-}
-
-.searchsection2 button[type=submit]:hover{
-    color: white;
-    border: 2px solid white;
-}
-
 /*MODIFICO LE PROPRIETA' DEL CONTENITORE RISERVATO ALLO SLIDESHOW*/
 .slider{
     position: relative;
@@ -272,6 +187,7 @@ nav{
     height: 1000px;
     animation: fadeIn;
     animation-duration: 4s;
+    border-bottom: 4px solid white;
 }
 
 

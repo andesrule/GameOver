@@ -76,16 +76,6 @@ UserBean user1 = (UserBean) request.getSession().getAttribute("current_user");%>
             <span class="dot" onclick="currentSlide(5)"><img src="img/dot.png" alt="dot"></span>
         </div>
     </div>
-
-    <!--DEFINISCO LA SEZIONE DEDICATA ALLA BARRA DI RICERCA-->
-    <div class="searchsection">
-
-        <!--DEFINISCO IL FORM, CON AUTOCOMPLETAMENTO DISATTIVATO-->
-        <form action="" class="searchform" id="searchform" autocomplete="off">
-            <input type="text" name="searchbar" id="searchbar" placeholder="Scrivi qui per cercare...">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
     
     <script src="js/slideanimation.js"></script>
     <script src="js/userdiv.js"></script>

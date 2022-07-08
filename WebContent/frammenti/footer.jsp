@@ -27,16 +27,6 @@
 		
 		<!-- SEZIONE DESTRA DEL FOOTER -->
         <div class="right">
-        
-            <!--DEFINISCO LA SEZIONE DEDICATA ALLA BARRA DI RICERCA-->
-            <div class="searchsection1">
-
-                <!--DEFINISCO IL FORM, CON AUTOCOMPLETAMENTO DISATTIVATO-->
-                <form action="" id="searchform" autocomplete="off">
-                    <input type="text" name="searchbar" id="searchbar" placeholder="Scrivi qui per cercare...">
-                    <button type="submit"><i class="fa fa-search"></i></button>
-                </form>
-            </div>
             <p>Leggi la nostra informativa sulla <a class="link" href="https://www.privacypolicies.com/live/5dda9b97-d8b3-4092-9f24-5fbc23c2842c" target="_blank"><b>PRIVACY</b></a></p>
             <p>Hai bisogno di aiuto? Puoi contattarci scrivendoci <a href="mailto:developer.site2022@hotmail.com?subject=[RICHIESTA%20DI%20AIUTO]"><b>QUI</b></a></p>
         </div>

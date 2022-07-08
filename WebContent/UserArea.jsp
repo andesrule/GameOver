@@ -38,12 +38,8 @@
 </head>
 
 <body>
-
-	
 	<!-- Area Utente -->
-
-
-<%@ include file = "../frammenti/loggedheader.jsp"%>
+	<%@ include file = "../frammenti/loggedheader.jsp"%>
 
 
 <h3>AREA UTENTE</h3>

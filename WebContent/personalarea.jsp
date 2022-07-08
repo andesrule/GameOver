@@ -34,7 +34,7 @@ pageEncoding="ISO-8859-1" import="java.util.*,com.model.javabeans.*"%>
 <body>
 	<div id="container">
 		<div id="main">
-			<%@ include file="../frammenti/loggedheadernosearch.jsp" %>
+			<%@ include file="../frammenti/loggedheader.jsp" %>
 			
 			<div class="usercontainer">
         		<div class="userimg">
