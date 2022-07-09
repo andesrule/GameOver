@@ -11,7 +11,7 @@ public class PaymentBean implements Serializable {
 	private static final long serialVersionUID = 1L;
 	private int idPagamento,cvv;
 	private String ncarta;
-	private Date dataScad;
+	private int annoScad,meseScad;
 	private int idUtenteRef;
 	
 	public int getIdUtenteRef() {
@@ -23,12 +23,13 @@ public class PaymentBean implements Serializable {
 	public PaymentBean() {
 		super();
 	}
-	public PaymentBean(int idPagamento, int cvv, String ncarta, Date dataScad) {
+	public PaymentBean(int idPagamento, int cvv, String ncarta, int annoScad, int meseScad) {
 		super();
 		this.idPagamento = idPagamento;
 		this.cvv = cvv;
 		this.ncarta = ncarta;
-		this.dataScad = dataScad;
+		this.annoScad=annoScad;
+		this.meseScad=meseScad;
 	}
 	public int getIdPagamento() {
 		return idPagamento;
@@ -48,12 +49,19 @@ public class PaymentBean implements Serializable {
 	public void setNcarta(String ncarta) {
 		this.ncarta = ncarta;
 	}
-	public Date getDataScad() {
-		return dataScad;
+	public int getAnnoScad() {
+		return annoScad;
 	}
-	public void setDataScad(Date dataScad) {
-		this.dataScad = dataScad;
+	public void setAnnoScad(int annoScad) {
+		this.annoScad = annoScad;
 	}
+	public int getMeseScad() {
+		return meseScad;
+	}
+	public void setMeseScad(int meseScad) {
+		this.meseScad = meseScad;
+	}
+
 	
 	
 	

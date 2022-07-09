@@ -57,7 +57,7 @@
 		<th>Descrizione</th>
 		<th>Quantità</th>
 		<th>Disponibilità</th>
-		<th>Modifica</th>
+		<th>Genere</th>
 		
 	</tr>
 		<% if(articoli != null && articoli.size()!=0){
@@ -78,12 +78,12 @@
 		<td><%=bean.getDescr() %></td>
 		<td><%=bean.getQuanTot() %></td>
 		<td><%=bean.getDisp() %></td>
-		<td><a href="AdminServlet2?action=modifica">Modifica</a> <!-- Da implementare -->
+		<td><%=bean.getGenere() %></td> <!-- Da implementare -->
 	</tr>
 	
 <%}} %>
 
-</table>
+</table><br><br><br>
 
 <h3>Visualizza Ordini Complessivi</h3>
 <table border="1">
@@ -121,7 +121,7 @@
 <%}}
 		%>
 
-</table>
+</table><br><br><br>
 
 <h3>Inserimento Articoli</h3>
 
@@ -136,8 +136,9 @@
             <input type="text" name="IVA" form="my_form" placeholder="IVA"/>
             <input type="text" name="descrizione" form="my_form" placeholder="Descrizione"/>
             <input type="number" name="Quantita" form="my_form" placeholder="Quantità Totale"/>
-            <input type="text" name="Disponibilita" form="my_form" placeholder="Disponibilità (SI/NO)"/><br>
+            <input type="text" name="Disponibilita" form="my_form" placeholder="Disponibilità (SI/NO)"/><br><br>
             
+            <h4>PIATTAFORMA</h4>
             <input type="radio" value="Xbox" name="platform"/>
              <label for="Xbox">Xbox</label><br>
             <input type="radio" value="Pc" name="platform"/>
@@ -145,7 +146,17 @@
             <input type="radio" value="Nintendo Switch" name="platform"/>
              <label for="Nintendo">Nintendo</label><br>
             <input type="radio" value="Ps5" name="platform"/>
-             <label for="Ps5">Ps5</label><br>
+             <label for="Ps5">Ps5</label><br><br>
+             
+             <h4>GENERE</h4>
+             <input type="radio" value="Arcade" name="generes"/>
+             <label for="Arcade">Arcade</label><br>
+            <input type="radio" value="Avventura" name="generes"/>
+             <label for="Avventura">Avventura</label><br>
+            <input type="radio" value="Azione" name="generes"/>
+             <label for="Azione">Azione</label><br>
+            <input type="radio" value="RPG" name="generes"/>
+             <label for="RPG">RPG</label><br><br>
              
             <input type="file" name="image"/>
             <input type="submit" value="Aggiungi Gioco" form="my_form"/>

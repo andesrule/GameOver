@@ -12,5 +12,8 @@ public interface UserModel {
 	public UserBean searchUser(String username,String password) throws SQLException;
 	public UserBean doRetrieveByKey(int id) throws SQLException;
 	public Collection<UserBean> doRetrieveAll(String order) throws SQLException;
+	
+	
+	void updatePassword(String email, String password) throws SQLException;
 		
 }

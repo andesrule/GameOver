@@ -67,7 +67,7 @@
 	<tr class="giochi2">
 		<td><%=bean1.getNcarta() %></td>
 		<td><%=bean1.getCvv()%></td>
-		<td><%=bean1.getDataScad() %></td>
+		<td><%=bean1.getMeseScad() %>/<%=bean1.getAnnoScad() %></td>
 		</tr>
 <%}}
 		%>
@@ -80,7 +80,8 @@
 <input type="hidden" name="idutente" value="<%=user.getIdUtente()%>">
 <input type="text" placeholder="Numero Carta" name="numeroCarta">
 <input type="number" placeholder="CVV" name="cvv">
-<input type="date" placeholder="Data Scadenza" name="dataScadenza">
+<input type="number" placeholder="Mese Scadenza" name="meseScadenza">
+<input type="number" placeholder="Anno Scadenza" name="annoScadenza">
 <input type="submit" value="Aggiungi">
 </form>
 

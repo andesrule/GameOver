@@ -1,10 +1,9 @@
 package com.control;
 
 import java.io.IOException;
-import java.sql.Date;
+
 import java.sql.SQLException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
+
 import java.util.Collection;
 
 import javax.servlet.RequestDispatcher;
@@ -51,17 +50,19 @@ public class UserAreaServlet extends HttpServlet {
 				dispatcher.forward(request, response);
 			}
 			if(action!=null && action.equalsIgnoreCase("insertPayment")) {
-				SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+				
 				int id=Integer.parseInt(request.getParameter("idutente"));
 				String ncarta=request.getParameter("numeroCarta");
 				int cvv=Integer.parseInt(request.getParameter("cvv"));
-				String scad = request.getParameter("dataScadenza");
-				java.sql.Date date =(java.sql.Date) formatter.parse(scad);
+				int mesescad = Integer.parseInt(request.getParameter("meseScadenza"));
+				int annoscad = Integer.parseInt(request.getParameter("annoScadenza"));
+				
 				PaymentBean bean = new PaymentBean();
 				bean.setCvv(cvv);
 				bean.setNcarta(ncarta);
 				bean.setIdUtenteRef(id);
-				bean.setDataScad(date);
+				bean.setAnnoScad(annoscad);
+				bean.setMeseScad(mesescad);
 				model.doSave(bean);
 				
 				Collection<?> metodi = (Collection<?>) model.doRetrieveByUser(id);
@@ -72,10 +73,7 @@ public class UserAreaServlet extends HttpServlet {
 		}catch (SQLException e) 
 		{
 			System.out.println("Error:" + e.getMessage());
-			} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+			}
 		
 	}
 

@@ -16,7 +16,8 @@ public class ProductBean implements Serializable{
 	private int quanTot;
 	private String disp;
 	private String img;
-	
+	private String genere;
+	private String back_image;
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -27,7 +28,7 @@ public class ProductBean implements Serializable{
 
 
 	public ProductBean(String nome, double prezzo, double iva, String descr, String recensione, int quanTot,
-			String disp, String img) {
+			String disp, String img,String genere,String back_image) {
 		super();
 		this.nome = nome;
 		this.prezzo = prezzo;
@@ -37,6 +38,8 @@ public class ProductBean implements Serializable{
 		this.quanTot = quanTot;
 		this.disp = disp;
 		this.img = img;
+		this.genere=genere;
+		this.back_image=back_image;
 	}
 
 	public int getId() {
@@ -137,6 +140,26 @@ public class ProductBean implements Serializable{
 	public String toString() {
 		// TODO Auto-generated method stub
 		return super.toString();
+	}
+
+
+	public String getGenere() {
+		return genere;
+	}
+
+
+	public void setGenere(String genere) {
+		this.genere = genere;
+	}
+
+
+	public String getBack_image() {
+		return back_image;
+	}
+
+
+	public void setBack_image(String back_image) {
+		this.back_image = back_image;
 	}
 	
 	

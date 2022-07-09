@@ -33,9 +33,9 @@ pageEncoding="ISO-8859-1" import="java.util.*,com.model.javabeans.*"%>
 
         <div class="usermini" id="usermini" onmouseleave="hidediv()">
             <p>Ciao, <span><%=user1.getUsername()%></span><br>
-            <a href="personalarea.jsp"><img src="img/gamepad.png" alt="person"></a><br>
-            <a href="personalarea.jsp">Vai alla tua area riservata</a><br><br>
-            <span>oppure</span><br><br>
+            <a href="user.jsp"><img src="img/gamepad.png" alt="person"></a><br>
+            <a href="user.jsp">Vai alla tua area riservata</a><br><br>
+            <span>Oppure</span><br><br>
             <a href="LogoutServlet"><button>Esci</button></a></p>
         </div>
     </nav><br><br><br><br><br>

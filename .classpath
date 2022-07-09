@@ -7,7 +7,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jst.j2ee.internal.module.container"/>
-	<classpathentry kind="lib" path="C:/Users/Windows-PC/Desktop/sitoWeb2022TSW/repository/GameOver/mysql-connector-java-8.0.29.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Cosmo/OneDrive/Desktop/Universita/TSW/WorkSpaceTSW/GameOver/mysql-connector-java-8.0.29.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jst.server.core.container/org.eclipse.jst.server.tomcat.runtimeTarget/Apache Tomcat v9.0">
 		<attributes>
 			<attribute name="owner.project.facets" value="jst.web"/>

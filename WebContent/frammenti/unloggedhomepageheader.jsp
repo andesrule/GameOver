@@ -8,11 +8,19 @@
     <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="js/validation.js"></script>
+	
+	<!-- Bootstrap -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     
 </head>
 
 <body>
-    
+    <!-- bootstrap -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    	<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    	
     <!--DEFINISCO IL CONTENITORE DELLA BARRA DI NAVIGAZIONE DEL SITO-->
     <nav>
 
@@ -33,56 +41,40 @@
             <li class="nav-item"><a href="cart.jsp"><img class="navico" src="img/cart.svg" alt="cartico"></a></li>
         </ul>
      
+</nav><br><br><br>
+   
 
-    </nav><br><br><br><br><br>
-
-    <!--DEFINISCO IL CONTENITORE DEDICATO ALLO SLIDESHOW-->
-    <div class="slider">
-
-        <!--DEFINISCO I VARI CONTENITORI RISERVATI ALLE IMMAGINI DELLO SLIDE SHOW-->
-        <div class="myslide">
-            <img src="img/slide1.jpg" alt="slide1" style="width: 100%; height: 100%;">
-        </div>
-        
-        <div class="myslide">
-            <img src="img/slide2.jpg" alt="slide2" style="width: 100%; height: 100%;">
-        </div>
-        
-        <div class="myslide">
-            <img src="img/slide3.jpg" alt="slide3" style="width: 100%; height: 100%;">
-        </div>
-        
-        <div class="myslide">
-            <img src="img/slide4.jpg" alt="slide4" style="width: 100%; height: 100%;">
-        </div>
-        
-        <div class="myslide">
-            <img src="img/slide5.jpg" alt="slide5" style="width: 100%; height: 100%;">
-        </div>
-
-        <!--DEFINISCO IL CONTENITORE DEDICATO AI PALLINI CHE SONO IN GRADO DI INDIRIZZARE L'UTENTE ALLA SLIDE DESIDERATA, CON UN CLCIK-->
-        <div class="dotsbox">
-
-            <!--DEFINISCO I VARI PALLINI DELLA DOTSBOX-->
-            <span class="dot" onclick="currentSlide(1)"><img src="img/dot.png" alt="dot"></span>
-            <span class="dot" onclick="currentSlide(2)"><img src="img/dot.png" alt="dot"></span>
-            <span class="dot" onclick="currentSlide(3)"><img src="img/dot.png" alt="dot"></span>
-            <span class="dot" onclick="currentSlide(4)"><img src="img/dot.png" alt="dot"></span>
-            <span class="dot" onclick="currentSlide(5)"><img src="img/dot.png" alt="dot"></span>
-        </div>
+    <!-- SLIDESHOW -->
+    <div class="customSlideshow">
+    <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="true">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+  </div>
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/slide1.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img/slide2.jpg" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="img/slide3.jpg" class="d-block w-100" alt="...">
     </div>
 
-    <!--DEFINISCO LA SEZIONE DEDICATA ALLA BARRA DI RICERCA-->
-    <div class="searchsection">
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
 
-        <!--DEFINISCO IL FORM, CON AUTOCOMPLETAMENTO DISATTIVATO-->
-        <form action="" class="searchform" id="searchform" autocomplete="off">
-            <input type="text" name="searchbar" id="searchbar" placeholder="Scrivi qui per cercare...">
-            <button type="submit"><i class="fa fa-search"></i></button>
-        </form>
-    </div>
-    
-    <script src="js/slideanimation.js"></script>
 
 </body>
 </html>

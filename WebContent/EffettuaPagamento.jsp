@@ -107,7 +107,7 @@
 				<tr>
 					<th><%=bean1.getNcarta() %></th>
 					<th><%=bean1.getCvv() %></th>
-					<th><%=bean1.getDataScad() %></th>
+					
 					<th><form action="CheckOutOrder" method="get">
 					<!-- Questa cosa non so se serve ma nel caso servisse basta togliere i commenti  
 					<input type="hidden" name="NCarta" value="<%=bean1.getNcarta() %>"><input type="hidden" name="CVV" value="<%=bean1.getCvv() %>"><input type="hidden" name="dataS" value="<%=bean1.getDataScad() %>"> 

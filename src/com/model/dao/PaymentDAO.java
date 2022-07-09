@@ -40,16 +40,17 @@ public class PaymentDAO implements PaymentModel{
 		PreparedStatement preparedStatement = null; 
 
 		
-		String insertSQL = "INSERT INTO " + TABLE_NAME +"(`numeroCarta`, `cvv`, `dataScadenza`,`idUtenteRef`)"
-		+ " VALUES (?, ?, ?, ?)";  
+		String insertSQL = "INSERT INTO " + TABLE_NAME +"(`numeroCarta`, `cvv`, `anno`, `mese`, `idUtenteRef`)"
+		+ " VALUES (?, ?, ?, ?, ?)";  
 
 		try {
 			connection = ds.getConnection(); 
 			preparedStatement = connection.prepareStatement(insertSQL);
 			preparedStatement.setString(1, bean.getNcarta());
 			preparedStatement.setInt(2, bean.getCvv());
-		    preparedStatement.setDate(3, bean.getDataScad());
-		    preparedStatement.setInt(4,bean.getIdUtenteRef());
+		    preparedStatement.setInt(3, bean.getAnnoScad());
+		    preparedStatement.setInt(4, bean.getMeseScad());
+		    preparedStatement.setInt(5,bean.getIdUtenteRef());
 			preparedStatement.executeUpdate(); 
 		}
 		
@@ -108,7 +109,8 @@ public class PaymentDAO implements PaymentModel{
 				 PaymentBean bean = new PaymentBean();
 				 bean.setIdPagamento(result.getInt("idPagamento"));
 				 bean.setCvv(result.getInt("cvv"));
-				 bean.setDataScad(result.getDate("dataScadenza"));
+				 bean.setMeseScad(result.getInt("mese"));
+				 bean.setAnnoScad(result.getInt("anno"));
 				 bean.setNcarta(result.getString("numeroCarta"));
 				 metodi.add(bean);
 			 }

@@ -73,8 +73,8 @@ public class ProductDAO implements ProductModel {
 		PreparedStatement preparedStatement = null; 
 
 		
-		String insertSQL = "INSERT INTO " + TABLE_NAME+" (`nome`, `prezzo`, `iva`, `descrizione`, `quantitaTot`, `disponibilita`,`immagine`)"
-		+ " VALUES (?, ?, ?, ?, ?, ?, ?)"; 
+		String insertSQL = "INSERT INTO " + TABLE_NAME+" (`nome`, `prezzo`, `iva`, `descrizione`, `quantitaTot`, `disponibilita`,`immagine`,`genere`)"
+		+ " VALUES (?, ?, ?, ?, ?, ?, ?, ?)"; 
 		
 		try {
 			connection=ds.getConnection();
@@ -86,6 +86,7 @@ public class ProductDAO implements ProductModel {
 			preparedStatement.setInt(5, product.getQuanTot());
 			preparedStatement.setString(6, product.getDisp());
 			preparedStatement.setString(7, product.getImg());
+			preparedStatement.setString(8, product.getGenere());
 			
 			preparedStatement.executeUpdate(); 
 			
@@ -173,10 +174,11 @@ public class ProductDAO implements ProductModel {
 				bean.setPrezzo(result.getDouble("prezzo"));
 				bean.setIva(result.getDouble("iva"));
 				bean.setDescr(result.getString("descrizione"));
-				bean.setRecensione(result.getString("recensione"));
 				bean.setQuanTot(result.getInt("quantitaTot"));
 				bean.setDisp(result.getString("disponibilita"));
 				bean.setImg(result.getString("immagine"));
+				bean.setGenere(result.getString("genere"));
+				bean.setBack_image(result.getString("back_image"));
 				articoli.add(bean);
 				
 			}
@@ -218,7 +220,8 @@ public class ProductDAO implements ProductModel {
 				bean.setQuanTot(result.getInt("quantitaTot"));
 				bean.setIva(result.getDouble("iva"));
 				bean.setImg(result.getString("immagine"));
-				
+				bean.setGenere(result.getString("genere"));
+				bean.setBack_image(result.getString("back_image"));
 				articoli.add(bean);
 				
 			}
@@ -261,6 +264,8 @@ public class ProductDAO implements ProductModel {
 				bean.setImg(result.getString("immagine"));
 				bean.setQuanTot(result.getInt("quantitaTot"));
 				bean.setDisp(result.getString("disponibilita"));
+				bean.setGenere(result.getString("genere"));
+				bean.setBack_image(result.getString("back_image"));
 				
 			}
 			
@@ -276,10 +281,224 @@ public class ProductDAO implements ProductModel {
 				}
 			}
 		return bean;
-		
-		
 	}
 	
+	public synchronized void updateName (int id, String newName) throws SQLException {  
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null; 
+
+		String insertSQL = "UPDATE " + TABLE_NAME + " SET nome = ? WHERE idArticolo = ?";  
+
+		try {
+			connection = ds.getConnection(); 
+			preparedStatement = connection.prepareStatement(insertSQL);
+			preparedStatement.setString(1, newName);
+			preparedStatement.setInt(2, id);
+
+			preparedStatement.executeUpdate(); 
+		
+			//connection.commit();
+		}
+
+		finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} 
+			
+			finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+	}
+	
+	public synchronized void updateQuantity (int id, int newQuantity) throws SQLException {  
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null; 
+
+		String insertSQL = "UPDATE " + TABLE_NAME + " SET quantitaTot = ? WHERE idArticolo = ?";  
+
+		try {
+			connection = ds.getConnection(); 
+			preparedStatement = connection.prepareStatement(insertSQL);
+			preparedStatement.setInt(1, newQuantity);
+			preparedStatement.setInt(2, id);
+
+			preparedStatement.executeUpdate(); 
+		
+			//connection.commit();
+		}
+
+		finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} 
+			
+			finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+		}
+	
+	public synchronized void updatePrice (int id, double newPrice) throws SQLException {  
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null; 
+
+		String insertSQL = "UPDATE " + TABLE_NAME + " SET prezzo = ? WHERE idArticolo = ?";  
+
+		try {
+			connection = ds.getConnection(); 
+			preparedStatement = connection.prepareStatement(insertSQL);
+			preparedStatement.setDouble(1, newPrice);
+			preparedStatement.setInt(2, id);
+
+			preparedStatement.executeUpdate(); 
+		
+			//connection.commit(); 
+		}
+
+		finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} 
+			
+			finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+	}	
+	
+	public synchronized void updateIva (int id, double newIva) throws SQLException {  
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null; 
+
+		String insertSQL = "UPDATE " + TABLE_NAME + " SET iva = ? WHERE idArticolo = ?";  
+
+		try {
+			connection = ds.getConnection(); 
+			preparedStatement = connection.prepareStatement(insertSQL);
+			preparedStatement.setDouble(1, newIva);
+			preparedStatement.setInt(2, id);
+
+			preparedStatement.executeUpdate(); 
+		
+			//connection.commit();
+		}
+
+		finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} 
+			
+			finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+	}
+	
+	public synchronized void updateDescription (int id, String newDescription) throws SQLException {  
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null; 
+
+		String insertSQL = "UPDATE " + TABLE_NAME + " SET descrizione = ? WHERE idArticolo = ?";  
+
+		try {
+			connection = ds.getConnection(); 
+			preparedStatement = connection.prepareStatement(insertSQL);
+			preparedStatement.setString(1, newDescription);
+			preparedStatement.setInt(2, id);
+
+			preparedStatement.executeUpdate(); 
+		
+			//connection.commit();
+		}
+
+		finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} 
+			
+			finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+	}
+	
+	public synchronized void updateImage (int id, String uploadPath) throws SQLException {  
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null; 
+
+		String insertSQL = "UPDATE " + TABLE_NAME + " SET immagine = ? WHERE idArticolo = ?";  
+
+		try {
+			connection = ds.getConnection(); 
+			preparedStatement = connection.prepareStatement(insertSQL);
+			preparedStatement.setString(1, uploadPath);
+			preparedStatement.setInt(2, id);
+
+			preparedStatement.executeUpdate(); 
+		
+			//connection.commit();
+		}
+
+		finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} 
+			
+			finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+		}
+	
+	public synchronized void updateGenere (int id, String genere) throws SQLException {  
+
+		Connection connection = null;
+		PreparedStatement preparedStatement = null; 
+
+		String insertSQL = "UPDATE " + TABLE_NAME + " SET genere = ? WHERE idArticolo = ?";  
+
+		try {
+			connection = ds.getConnection(); 
+			preparedStatement = connection.prepareStatement(insertSQL);
+			preparedStatement.setString(1, genere);
+			preparedStatement.setInt(2, id);
+
+			preparedStatement.executeUpdate(); 
+		
+			//connection.commit();
+		}
+
+		finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} 
+			
+			finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+		}
 }
 
 

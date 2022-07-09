@@ -92,9 +92,9 @@ public class AdminServlet2 extends HttpServlet {
 				String disp = request.getParameter("Disponibilita");System.out.println(disp);
 				Part file = request.getPart("image");
 				String platname = request.getParameter("platform");
-				
+				String generes = request.getParameter("generes");
 				System.out.println(platname);
-				String uploadPath = "C:\\Users\\Windows-PC\\Desktop\\sitoWeb2022TSW\\repository\\GameOver\\WebContent\\img\\" + file.getSubmittedFileName();
+				String uploadPath = "C:\\Users\\Cosmo\\OneDrive\\Desktop\\Universita\\TSW\\WorkSpaceTSW\\GameOver\\WebContent\\img\\" + file.getSubmittedFileName();
 				/*
 				 *--> Emanuele P. Path String uploadPath = "C:\Users\emanu\Desktop\GameOver\WebContent\img\\" + file.getSubmittedFileName();
 				 *--> Thomas String uploadPath = "C:\\Users\\Cosmo\\OneDrive\\Desktop\\Universita\\TSW\\WorkSpaceTSW\\GameOver\\WebContent\\img\\" + file.getSubmittedFileName();
@@ -111,7 +111,7 @@ public class AdminServlet2 extends HttpServlet {
 				bean.setQuanTot(quant);
 				bean.setDisp(disp);
 				bean.setImg(uploadPath);
-				
+				bean.setGenere(generes);
 				model.doSave(bean);
 				
 				bean2.setDescr("Steam");

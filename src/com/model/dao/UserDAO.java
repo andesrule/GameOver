@@ -239,6 +239,38 @@ public class UserDAO implements UserModel {
 		}
 		return users;
 	}
+	@Override
+	public void updatePassword(String email,String password) throws SQLException {
+		Connection connection = null;
+		PreparedStatement preparedStatement = null; 
+
+		String insertSQL = "UPDATE " + TABLE_NAME + " SET password = ? WHERE email = ?";  
+
+		try {
+			connection = ds.getConnection(); 
+			preparedStatement = connection.prepareStatement(insertSQL);
+			preparedStatement.setString(1, password);
+			preparedStatement.setString(2, email);
+
+			preparedStatement.executeUpdate(); 
+		
+			//connection.commit();
+		}
+
+		finally {
+			try {
+				if (preparedStatement != null)
+					preparedStatement.close();
+			} 
+			
+			finally {
+				if (connection != null)
+					connection.close();
+			}
+		}
+		}
+		
+	}
 	
-}
+
 	
