@@ -1,6 +1,5 @@
 footer{
 	background-color: black;
-	posiiton: relative;
 	height: fit-content;
 	margin-top: -100px;
 	clear: both;
@@ -94,7 +93,7 @@ footer span:hover{
 }
 
 /*SEZIONE DESTRA DEL FOOTER*/
-.right{
+.right1{
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -104,7 +103,7 @@ footer span:hover{
     padding: 5px;
 }
 
-.right p{
+.right1 p{
     margin-top: 40px;
     color: white;
 }

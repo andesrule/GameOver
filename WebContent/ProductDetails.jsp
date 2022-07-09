@@ -30,6 +30,10 @@
 
     <!--IMPOSTO L'ICONA CHE APPARIRA' AFFIANCO AL TITOLO DEL SITO WEB-->
     <link rel="icon" type="image/x-icon" href="img/faviconTitle.ico">
+    
+    <!-- CSS only bootstrap -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    
     <title>Game Over</title>
 </head>
 
@@ -48,7 +52,6 @@
 					<p>Prezzo: <%= bean.getPrezzo() %> Euro</p>		
 					<p>Descrizione: <br> <%= bean.getDescr() %></p>
 				
-					<input type="number" name="quantity" placeholder="Quantity"/>
 					<a href="CartServlet?action=addcart&id=<%=bean.getId()%>" id="put-in-cart">Aggiungi Al Carrello</a>
 				</div>
 			</div>

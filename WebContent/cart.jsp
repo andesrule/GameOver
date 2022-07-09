@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-pageEncoding="ISO-8859-1" import="java.util.*,com.model.javabeans.*"%>
-<%UserBean user4 = (UserBean) request.getSession().getAttribute("current_user");%>
+    pageEncoding="ISO-8859-1" import="com.model.javabeans.*, java.util.*"%>
+    
+<%UserBean user = (UserBean) request.getSession().getAttribute("current_user");%>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -28,8 +30,6 @@ pageEncoding="ISO-8859-1" import="java.util.*,com.model.javabeans.*"%>
         <!--IMPOSTO L'ICONA CHE APPARIRA' AFFIANCO AL TITOLO DEL SITO WEB-->
         <link rel="icon" type="image/x-icon" href="img/faviconTitle.ico">
 
-        <link rel="stylesheet" href="css/payment.css">
-
         <link rel="stylesheet" href="css/cart.css">
     
         <title>Game Over</title>
@@ -37,9 +37,11 @@ pageEncoding="ISO-8859-1" import="java.util.*,com.model.javabeans.*"%>
 <body>
     <div class="container">
         <div class="main">
-            <%if(user4 == null) {%>
+            <!-- CONTAINER DELLA BARRA DI NAVIGAZIONE -->
+            <%if(user == null) {%>
 				<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
 				<%@ include file = "../frammenti/unloggedheader.jsp"%><%} else{%> <%@ include file="../frammenti/loggedheader.jsp" %> <%} %>
+            
             <div class="containercart">
                 <div class="cartcontainer">
                     <div class="product">
@@ -52,49 +54,9 @@ pageEncoding="ISO-8859-1" import="java.util.*,com.model.javabeans.*"%>
                             </div>
                             <div class="price">
                                 <h2>19.25&euro;</h2><br>
-                                <em><span>Quantità: </span></em><br>
+                                <em><span>Quantità : </span></em><br>
                                 <form action="">
-                                    <input type="number" name="quantity" min="1" max="10" value="1">
-                                </form>
-                            </div>
-                            <div class="actioncart">
-                                <a href="">Rimuovi dal carrello</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="imgcontainer">
-                            <img src="img/game12.jpg" alt="game12">
-                        </div>
-                        <div class="nameactcontainer">
-                            <div class="nameproduct">
-                                <h1>Chaos Gate</h1>
-                            </div>
-                            <div class="price">
-                                <h2>19.25&euro;</h2><br>
-                                <em><span>Quantità: </span></em><br>
-                                <form action="">
-                                    <input type="number" name="quantity" min="1" max="10" value="1">
-                                </form>
-                            </div>
-                            <div class="actioncart">
-                                <a href="">Rimuovi dal carrello</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="product">
-                        <div class="imgcontainer">
-                            <img src="img/game12.jpg" alt="game12">
-                        </div>
-                        <div class="nameactcontainer">
-                            <div class="nameproduct">
-                                <h1>Chaos Gate</h1>
-                            </div>
-                            <div class="price">
-                                <h2>19.25&euro;</h2><br>
-                                <em><span>Quantità: </span></em><br>
-                                <form action="">
-                                    <input type="number" name="quantity" min="1" max="10" value="1">
+                                    <input type="number" name="quantity" min="1" max="100" value="1">
                                 </form>
                             </div>
                             <div class="actioncart">
@@ -108,7 +70,7 @@ pageEncoding="ISO-8859-1" import="java.util.*,com.model.javabeans.*"%>
                         <h2>Riepilogo ordine</h2><br>
                         <p>Indirizzo di spedizione: <span>INDIRIZZO</span></p><br>
                         <p>Metodo di pagamento utilizzato: <br><br>
-                            <div class="creditcontainer">
+                            <div class="paymentuser">
                                 <div class="creditcard">
                                     <div class="chipcontainer">
                                         <img src="img/chip.png" alt="chip">

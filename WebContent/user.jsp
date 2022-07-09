@@ -29,6 +29,7 @@
 <body>
     <div id="container">
         <div id="main">
+        <%@ include file = "../frammenti/loggedheader.jsp"%>
             <div class="regcontainer">
                 <div class="middle" style="width: fit-content;">
                     <div class="title">
@@ -61,7 +62,7 @@
                                     </div>
                                 </div><br>
                                 <div class="paymentuser">
-                                    <h2>Metodi di pagamento</h2>
+                                    <h2 style="margin-bottom:20px;">Metodi di pagamento</h2>
                                     <div class="creditcard">
                                         <div class="chipcontainer">
                                             <img src="img/chip.png" alt="chip">
@@ -136,5 +137,6 @@
             </div>
         </div>
     </div>
+    
 </body>
 </html>

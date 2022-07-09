@@ -177,6 +177,113 @@
     color: white;
 }
 
+.paymentuser{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+}
+
+.creditcard{
+    position: relative;
+    background-image: url(../img/creditbg.png);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    height: 200px;
+    width: 400px;
+    border-radius: 20px;
+    padding: 30px;
+    font-family: 'Roboto Mono', monospace;
+    margin-bottom: 30px;
+}
+
+.chipcontainer{
+    position: absolute;
+    top: 10%;
+}
+
+.chipcontainer img{
+    width: 60px;
+}
+
+.banklogo{
+    position: absolute;
+    right: 5%;
+}
+
+.banklogo img{
+    width: 50px;
+}
+
+.numbercard{
+    position: absolute;
+    top: 20%;
+}
+
+.numbercard p{
+    color: white;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.expiresdate{
+    position: absolute;
+    top: 60%;
+    left: 35%;
+}
+
+.expiresdate p{
+    color: white;
+    font-size: 15px;
+}
+
+.expiresdate span{
+    position: absolute;
+    top: 0%;
+    margin-left: 20px;
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.nomecontainer{
+    position: absolute;
+    width: 100%;
+    top: 65%;
+    height: 35px;
+    color: white;
+    padding-bottom: 20px;
+}
+
+.name{
+    text-align: center;
+    top: 10%;
+    position: absolute;
+}
+
+.name p{
+    font-size: 25px;
+}
+
+.cvv{
+    position: absolute;
+    height: fit-content;
+    top: 75%;
+    right: 10%;
+}
+
+.cvv p{
+    font-size: 18px;
+    color: white;
+}
+
+.cvv span{
+    font-size: 24px;
+    font-weight: bold;
+}
+
 @media screen and (max-width: 1140px) {
     .cartcontainer{
         width: 100%;

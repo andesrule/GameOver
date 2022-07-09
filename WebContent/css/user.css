@@ -1,7 +1,7 @@
 #main{
     height: 100%;
     width: 100%;
-    background-image: url(../img/loginbg.png);
+    background-image: url(../img/loginbg2.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -34,6 +34,9 @@ html, head, body{
     padding: 20px;
     height: 100%;
 }
+.title{
+	margin-bottom:15px;
+}
 
 .title img{
     opacity: 1;
@@ -46,7 +49,7 @@ html, head, body{
 }
 
 .middle{
-    background: rgba(0, 0, 0, 0.678);
+    background: rgba(0, 0, 0, 0.5);
     width: 400px;
     border-radius: 20px;
     display: flex;
@@ -217,6 +220,9 @@ html, head, body{
     align-items: center;
     align-content: center;
     text-align: center;
+    border:2px solid white;
+    border-radius:7px;
+    padding:10px;
 }
 
 .userinfocontainer h2{
@@ -224,6 +230,7 @@ html, head, body{
 }
 
 .anagraficdata{
+	margin-bottom:20px;
 }
 
 .anagraficdata p{
@@ -245,6 +252,7 @@ html, head, body{
 }
 
 .contactu{
+	margin-bottom:20px;
 }
 
 .contactu p{
@@ -257,6 +265,7 @@ html, head, body{
 }
 
 .addressuser{
+	margin-bottom:20px;
 }
 
 .addressuser p{

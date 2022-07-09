@@ -70,14 +70,14 @@ public class CartServlet extends HttpServlet {
 				// aggiungi al carrello
 				if(model.doRetrieveByKey(id).getDisp().equalsIgnoreCase("SI"))// && model.prendiPerId(id).getQuant()<quantita)
 				cart.addProduct(id);
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Cart.jsp");
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/cart.jsp");
 				dispatcher.forward(request, response);
 				}
 			else if (action.equalsIgnoreCase("deletefromcart")) {
 				int id = Integer.parseInt(request.getParameter("id"));
 				// eliminiamo dal carrello
 				cart.deleteAllProduct(id);
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Cart.jsp");
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/cart.jsp");
 				dispatcher.forward(request, response);
 			}else if(action.equalsIgnoreCase("checkout") && action!= null) {
 				
