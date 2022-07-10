@@ -55,11 +55,17 @@ public class CartServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+	
+	
+
+		
 		String action = (String) request.getParameter("action");
 		 Cart cart = (Cart)request.getSession().getAttribute("cart");
 			if(cart == null) {
 				cart = new Cart();
 				request.getSession().setAttribute("cart", cart);
+				
 			}
 			try {
 				
@@ -79,30 +85,13 @@ public class CartServlet extends HttpServlet {
 				cart.deleteAllProduct(id);
 				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/cart.jsp");
 				dispatcher.forward(request, response);
-			}else if(action.equalsIgnoreCase("checkout") && action!= null) {
-				
-				//Effettuo il checkout
-				int id= Integer.parseInt(request.getParameter("id"));
-				System.out.println(id);
-				
-				// mi passo l'id dell'utente che vuole effettuare il checkout
-				request.setAttribute("utente", model1.doRetrieveByKey(id));
-				
-				// mi passo il metodo di pagamento dell'utente (se lo ha , nel caso può aggiungerlo collegandosi alla sua area utente)
-				Collection<?> metodi = (Collection<?>) model2.doRetrieveByUser(id);
-				request.setAttribute("metodiUser1",metodi);
-				
-				// mi passo il carrello
-				request.getSession().setAttribute("carrello", cart);
-				
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/EffettuaPagamento.jsp");
-				dispatcher.forward(request, response);
-				
-			}
+			}	
+			
 			}catch (SQLException e) {
 				System.out.println("Error:" + e.getMessage());
 			}
-
+			
+	
 			
 	}
 

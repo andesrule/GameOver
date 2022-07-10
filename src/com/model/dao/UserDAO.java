@@ -269,6 +269,42 @@ public class UserDAO implements UserModel {
 			}
 		}
 		}
+	@Override
+	public int doGetLastKey() throws SQLException {
+		
+		Connection con = null;
+		PreparedStatement statement = null;
+		
+		int id = 0;
+		
+		String querySel= "Select * from "+TABLE_NAME ;
+		
+		try {
+			con = ds.getConnection();
+			statement = con.prepareStatement(querySel);
+			
+			ResultSet result = statement.executeQuery();
+			
+			while(result.next()) {
+				
+				id = result.getInt("idUtente");
+							}
+			
+		}finally {
+			try {
+				if(statement != null) {
+					statement.close();
+				}
+				
+			}finally{
+					if(con!=null)
+						con.close();
+				}
+			}
+		
+		return id;
+		
+	}
 		
 	}
 	

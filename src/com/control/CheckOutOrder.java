@@ -58,12 +58,14 @@ public class CheckOutOrder extends HttpServlet {
 			int quantityTot = Integer.parseInt(request.getParameter("quantityTot"));
 			double prezzoTot = Double.parseDouble(request.getParameter("prezzoTot"));
 			
+			
+			System.out.println(idUtente + " " + idPagamento + " "+ quantityTot + " " + prezzoTot);
 			// mi calcolo la data giornaliera + la data del giorno dopo alla data corrente
 			long miliseconds = System.currentTimeMillis();
 		    Date date1 = new Date(miliseconds);	  
 	        Date tomorrow = new Date(date1.getTime() + (1000 * 60 * 60 * 24));
 
-	        // inserisco tutto nel bean e chiamo il metodo doSave()  per salvare l'ordine
+	       // inserisco tutto nel bean e chiamo il metodo doSave()  per salvare l'ordine
 	        OrderBean bean = new OrderBean();
 		    bean.setIdUtente(idUtente);
 		    bean.setIdPagamento(idPagamento);
@@ -74,17 +76,25 @@ public class CheckOutOrder extends HttpServlet {
 		    bean.setStatoOrdine("ordindato");
 		  
 		    try {
+		    	if(prezzoTot > 0) {
 				model.doSave(bean);
-				Cart cart = (Cart) request.getSession().getAttribute("carrello");
+				Cart cart = (Cart) request.getSession().getAttribute("cart");
 				cart.deleteAll();
 				System.out.println("Ordine Eseguito con successo");
+				}else {
+
+				    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/cart.jsp");
+					dispatcher.forward(request, response);
+						
+				}
+		    	
 			} catch (SQLException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		    
 		    
-		    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Cart.jsp");
+		    RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/cart.jsp");
 			dispatcher.forward(request, response);
 		    
 		    

@@ -37,7 +37,7 @@ public class UpdateQuantity extends HttpServlet {
 		int quantita = Integer.parseInt(request.getParameter("quantity"));
 		int id = Integer.parseInt(request.getParameter("id"));
 		cart.setQuantity(id,quantita);
-		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/Cart.jsp");
+		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/cart.jsp");
 		dispatcher.forward(request, response);
 
 		

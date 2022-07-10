@@ -141,13 +141,13 @@ html, head, body{
 #errorPass1{
     color:red;
     margin-bottom: 10px;
-    
+    display:none;
 }
 
 #errorPass2{
     color:red;
     margin-bottom: 10px;
-    
+    display:none;
 }
 
 

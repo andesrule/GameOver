@@ -98,7 +98,7 @@ public class PaymentDAO implements PaymentModel{
 		PreparedStatement preparedStatement = null; 
 
 		Collection<PaymentBean> metodi = new LinkedList<PaymentBean>();
-		String SQL ="select distinct metodopagamento.idPagamento,metodopagamento.idUtenteRef ,metodopagamento.numeroCarta,metodopagamento.cvv,metodopagamento.dataScadenza "
+		String SQL ="select distinct metodopagamento.idPagamento,metodopagamento.idUtenteRef ,metodopagamento.numeroCarta,metodopagamento.cvv,metodopagamento.mese, metodopagamento.anno "
 				+ "from metodopagamento join utente where idUtenteRef=?";
 		try {
 			connection = ds.getConnection();

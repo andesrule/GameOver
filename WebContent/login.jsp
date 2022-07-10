@@ -20,8 +20,8 @@
 
     <script src="https://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/validation.js"></script>
     
-	
     <!--IMPOSTO L'ICONA CHE APPARIRA' AFFIANCO AL TITOLO DEL SITO WEB-->
     <link rel="icon" type="image/x-icon" href="img/faviconTitle.ico">
     <title>Game Over</title>
@@ -40,14 +40,14 @@
                     <div class="formcontainer">
                         <form id="form">
                		        <label for="user">Username</label><br>
-               		        <input type="text" name="user" id="username" placeholder="sonicboom123" required><br>
-                	        <div id="errorPass1"></div>
+               		        <input type="text" name="user" id="username" placeholder="sonicboom123" ><br>
+                	        <div id="errorPass1">Errore... non inserire caratteri speciali($%&/...)</div>
 							
                 	        <label for="pwd">Password</label><br>
                 	        <input type="password" name="pwd" id="password" placeholder="********" required><br>
-               		        <div id="errorPass2"></div>
+               		        <div id="errorPass2">Il campo vuoto inserisci qualcosa</div>
 
-                            <a href="passreset.html">Ho dimenticato la password</a><br><br>
+                            <a href="passreset.jsp">Ho dimenticato la password</a><br><br>
 
 							<input type="submit" id="submit" value="Accedi"><br>
                             <a href="register.jsp">Non hai un account? CLicca qui per crearne uno</a><br><br>
@@ -57,6 +57,6 @@
             </div>
         </div>
     </div>
-    <script src="js/validation.js"></script>
+   
 </body>
 </html>

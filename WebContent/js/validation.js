@@ -37,6 +37,7 @@ $(document)
 										}
 
 										if (user.match(userValid)) {
+											
 											$("#errorPass1").remove();
 											$("#errorPass2").remove();
 											$

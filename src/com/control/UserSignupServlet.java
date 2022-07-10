@@ -1,6 +1,7 @@
 package com.control;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.sql.SQLException;
 
 import javax.servlet.RequestDispatcher;
@@ -10,7 +11,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.model.javabeans.PaymentBean;
+import com.model.javabeans.PaymentModel;
 import com.model.javabeans.UserBean;
+import com.model.dao.PaymentDAO;
 import com.model.dao.UserDAO;
 import com.model.javabeans.UserModel;
 
@@ -21,11 +25,13 @@ import com.model.javabeans.UserModel;
 public class UserSignupServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	static UserModel model;
+	static PaymentModel model1;
 	static boolean isDataSource = true;
 	
 	static {
 		if(isDataSource) {
 			model = new UserDAO();
+			model1 = new PaymentDAO();
 		}
 	}
     public UserSignupServlet() {
@@ -38,40 +44,59 @@ public class UserSignupServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+		PrintWriter out= response.getWriter();
+		
 		String nome = request.getParameter("nome");
 		String cognome = request.getParameter("cognome");
-		String telefono = request.getParameter("telefono");
-		String email = request.getParameter("email");
-		String password = request.getParameter("pwd");
 		String username= request.getParameter("user");
+		String password = request.getParameter("pwd");
+		String email = request.getParameter("email");
+		String telefono = request.getParameter("telefono");
 		String via = request.getParameter("via");
-		String cap = request.getParameter("cap");
 		String citta = request.getParameter("citta");
 		String provincia = request.getParameter("provincia");
+		String cap = request.getParameter("cap");
 		int civico = Integer.parseInt(request.getParameter("civico"));
+		String nCarta = request.getParameter("ncarta");
+		int meseScad = Integer.parseInt(request.getParameter("mesescadenza"));
+		int annoScad = Integer.parseInt(request.getParameter("annoscadenza"));
+		int cvv = Integer.parseInt(request.getParameter("cvv"));
 		
+		System.out.println("Nome:"+ nome + " Cognome:" + cognome + " Username:" + username + " Password:" + password + " Email:" + email + " Telefono:"+  telefono + " Via:" + via + " Citta:" + citta + " Provincia:" + provincia +"  cap:" + cap);
+
 		UserBean bean = new UserBean();
 		bean.setAdmin(0);
 		bean.setNome(nome);
 		bean.setCognome(cognome);
-		bean.setTelefono(telefono);
-		bean.setEmail(email);
-		bean.setPassword(password);
 		bean.setUsername(username);
+		bean.setPassword(password);
+		bean.setEmail(email);
+		bean.setTelefono(telefono);
 		bean.setVia(via);
 		bean.setCitta(citta);
-		bean.setnCivico(civico);
 		bean.setProvincia(provincia);
+		bean.setnCivico(civico);
 		bean.setCap(cap);
 		
+		PaymentBean payBean = new PaymentBean();
+		System.out.println("Ncarta:"+nCarta + " Cvv:" + cvv + " Mese:" + meseScad + " Anno:" + annoScad );
 		
 		try {
 			request.setAttribute("utente_signup_check", "true");
 			model.doSave(bean);
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/login.jsp");
+			int id = model.doGetLastKey();
+			System.out.println(id);
 			
-			dispatcher.forward(request, response);
+			payBean.setNcarta(nCarta);
+			payBean.setIdUtenteRef(id);
+			payBean.setCvv(cvv);
+			payBean.setAnnoScad(2000+annoScad);
+			payBean.setMeseScad(meseScad);
+			model1.doSave(payBean);
+			
+			out.print("Ok");
 		} catch (SQLException e) {
+			
 			e.printStackTrace();
 		}
 		

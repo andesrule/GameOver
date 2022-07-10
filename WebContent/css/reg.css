@@ -37,6 +37,20 @@
     animation-duration: 1s;
 }
 
+#errorPass1{
+    color:red;
+    margin-bottom: 10px;
+    display:none;
+    
+}
+
+#errorPass2{
+    color:red;
+    margin-bottom: 10px;
+    display:none;
+    
+}
+
 .regcontainer h1{
     color: white;
     border-bottom: 2px solid white;
