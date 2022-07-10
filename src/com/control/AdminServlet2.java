@@ -94,7 +94,7 @@ public class AdminServlet2 extends HttpServlet {
 				String platname = request.getParameter("platform");
 				String generes = request.getParameter("generes");
 				System.out.println(platname);
-				String uploadPath = "C:\\Users\\Cosmo\\OneDrive\\Desktop\\Universita\\TSW\\WorkSpaceTSW\\GameOver\\WebContent\\img\\" + file.getSubmittedFileName();
+				String uploadPath = "C:\\Users\\emanu\\Desktop\\GameOver\\WebContent\\img\\" + file.getSubmittedFileName();
 				/*
 				 *--> Emanuele P. Path String uploadPath = "C:\Users\emanu\Desktop\GameOver\WebContent\img\\" + file.getSubmittedFileName();
 				 *--> Thomas String uploadPath = "C:\\Users\\Cosmo\\OneDrive\\Desktop\\Universita\\TSW\\WorkSpaceTSW\\GameOver\\WebContent\\img\\" + file.getSubmittedFileName();

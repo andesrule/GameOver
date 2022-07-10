@@ -57,7 +57,11 @@
 					<input type="hidden" name="idBean" value="<%=bean.getId()%>">
 						<div class="mb-3">
 							<label class="form-label" style="color:black;">Prezzo</label>
+<<<<<<< HEAD
 							<input type="number" step="0.01" name="prezzo" class="form-control" placeholder="<%=bean.getPrezzo()%>">
+=======
+							<input type="number"step="0.01" name="prezzo" class="form-control" placeholder="<%=bean.getPrezzo()%>">
+>>>>>>> c73f4840cafa5fe2f4af111f5c8f93af9dc076e7
 						</div>
 						
 						<div class="modal-footer">

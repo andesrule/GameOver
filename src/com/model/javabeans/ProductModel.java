@@ -21,4 +21,6 @@ public interface ProductModel {
 	public  void updateGenere (int id, String genere) throws SQLException;
 	public  Collection<ProductBean> doRetrieveByGenere(String genere) throws SQLException;
 	
+	public Collection<ProductBean> searchBar(String search) throws SQLException;
+	
 }
