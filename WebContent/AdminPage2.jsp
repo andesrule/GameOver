@@ -58,7 +58,23 @@
 		<td><%=bean.getNome() %></td>
 		<td><%=bean.getPrezzo() %></td>
 		<td><%=bean.getIva() %></td>
-		<td><%=bean.getDescr()%></td>
+		
+		<td style="color:black;">
+		
+  		<button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExample" aria-expanded="false" aria-controls="collapseWidthExample">
+    		Mostra
+  		</button>
+		
+		<div style="min-height: 120px;">
+  			<div class="collapse collapse-horizontal" id="collapseWidthExample">
+   			 <div class="card card-body" style="width: 300px;">
+      <%=bean.getDescr()%>
+    </div>
+  </div>
+</div>
+		
+		
+		</td>
 		<td><%=bean.getQuanTot() %></td>
 		<td><%=bean.getDisp() %></td>
 		<td><%=bean.getGenere() %></td> 
@@ -110,9 +126,15 @@
 </table>
 </div><br><br><br>
 
-<h3 style="text-align:center;font-weight:bold;color:white;">Inserimento Articoli</h3>
 
-<form method="post" id="my_form" action="AdminServlet2" enctype="multipart/form-data">
+<h3 ><a class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthEx" aria-expanded="false" aria-controls="collapseWidthEx">
+    		Inserimento Articoli
+  		</a></h3>
+		
+		<div style="min-height: 120px;">
+  			<div class="collapse collapse-horizontal" id="collapseWidthEx">
+   			 <div class="card card-body" style="width: 500px;background-color:#212529">
+      <form method="post" id="my_form" action="AdminServlet2" enctype="multipart/form-data">
 <input type="hidden" name="action" value="insert">
 <table>
     <tr>
@@ -127,45 +149,73 @@
             
             <h4 style="color:white;">PIATTAFORMA</h4>
             <input type="radio" value="Xbox" name="platform"/>
-             <label for="Xbox">Xbox</label><br>
+             <label for="Xbox" style="color:white;">Xbox</label><br>
             <input type="radio" value="Pc" name="platform"/>
-             <label for="Pc">Pc</label><br>
+             <label for="Pc" style="color:white;">Pc</label><br>
             <input type="radio" value="Nintendo Switch" name="platform"/>
-             <label for="Nintendo">Nintendo</label><br>
+             <label for="Nintendo" style="color:white;">Nintendo</label><br>
             <input type="radio" value="Ps5" name="platform"/>
-             <label for="Ps5">Ps5</label><br><br>
+             <label for="Ps5" style="color:white;">Ps5</label><br><br>
              
              <h4 style="color:white;">GENERE</h4>
              <input type="radio" value="Arcade" name="generes"/>
-             <label for="Arcade">Arcade</label><br>
+             <label for="Arcade" style="color:white;">Arcade</label><br>
             <input type="radio" value="Avventura" name="generes"/>
-             <label for="Avventura">Avventura</label><br>
+             <label for="Avventura" style="color:white;">Avventura</label><br>
             <input type="radio" value="Azione" name="generes"/>
-             <label for="Azione">Azione</label><br>
+             <label for="Azione" style="color:white;">Azione</label><br>
             <input type="radio" value="RPG" name="generes"/>
-             <label for="RPG">RPG</label><br><br>
+             <label for="RPG" style="color:white;">RPG</label><br><br>
              
             <input type="file" name="image"/>
-            <input type="submit" value="Aggiungi Gioco" form="my_form"/>
-            <input type="reset" value="Annulla" /><br><br>
+            <input type="submit" value="Aggiungi Gioco" class="btn btn-primary"form="my_form"/>
+            <input type="reset" value="Annulla" class="btn btn-danger" /><br><br>
         </td>
     </tr>
 </table>
 </form>
+    </div>
+  </div>
+</div>
 
-<form method="GET" id=my_form2 action="AdminServlet2">
-<input type="hidden" name="action" value="searchByDate">
-<input type="date" name="DataInizio" form="my_form2">
-<input type="date" name="DataFine" form="my_form2">
-<input type="submit" value="Cerca" form="my_form2">
-</form>
-<form method="get" id=my_form3 action="AdminServlet2">
-<input type="text" name="Cliente" placeholder="Cliente" form="my_form3">
-<input type="hidden" name="action" value="searchByUser">
-<input type="submit" value="Cerca" form="my_form3">
-</form>
 
-<h3 style="text-align:center;font-weight:bold;color:white;">Ricerca Ordini</h3>
+
+<button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExam" aria-expanded="false" aria-controls="collapseWidthExam">
+    		Ricerca Ordini per Data
+  		</button>
+		
+		<div style="min-height: 120px;">
+  			<div class="collapse collapse-horizontal" id="collapseWidthExam">
+   			 <div class="card card-body" style="width: 350px; background-color:#212529">
+      <form method="GET" id=my_form2 action="AdminServlet2">
+			<input type="hidden" name="action" value="searchByDate">
+			<input type="date" name="DataInizio" form="my_form2" style="height:37.5px">
+			<input type="date" name="DataFine" form="my_form2" style="height:37.5px">
+			<input type="submit" value="Cerca" form="my_form2" class="btn btn-primary">
+</form>
+    </div>
+  </div>
+</div>
+
+
+<button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWidthExa" aria-expanded="false" aria-controls="collapseWidthExa">
+    		Ricerca Ordini per Cliente
+  		</button>
+		
+		<div style="min-height: 120px;">
+  			<div class="collapse collapse-horizontal" id="collapseWidthExa">
+   			 <div class="card card-body" style="width: 350px; background-color:#212529">
+      <form method="get" id=my_form3 action="AdminServlet2">
+			<input type="text" name="Cliente" placeholder="Cliente" form="my_form3" style="height:37.5px">
+			<input type="hidden" name="action" value="searchByUser">
+			<input type="submit" value="Cerca" form="my_form3" class="btn btn-danger">
+</form>
+    </div>
+  </div>
+</div>
+
+
+<h3 style="text-align:center;font-weight:bold;color:white;">Visualizza Ordini</h3>
 	<div class="table-responsive" >
 	<table class="table table-dark table-striped " >
 	<thead>
