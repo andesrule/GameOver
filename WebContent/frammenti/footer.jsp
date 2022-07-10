@@ -9,9 +9,7 @@
         <div class="logo1"><a href="index.jsp"><img src="img/logo.png" alt="logo"></a></div>
         
         	<!-- LISTA PER GLI ELEMENTI DEL FOOTER -->
-            <ul>
-                <li><a href="" class="aboutus"><b>Su di noi</b></a></li>
-            </ul>
+           
             
             <div class="social" id="social">
                 <ul>

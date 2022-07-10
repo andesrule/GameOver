@@ -11,22 +11,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <!--IMPORTO IL FONT MONTSERRAT DA GOOGLE FONT-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700;900&display=swap" rel="stylesheet">
+ 
 
-    <!--IMPORTO LA LIBRERIA ANIMATE.CSS CHE SI OCCUPA DELLE ANIMAZIONI DELLA PAGINA WEB-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
-
+	<link rel="stylesheet" href="css/default.css">
     <!--IMOPORTO LA LIBRERIA FONT-AWESOME CHE SI OCCUPERA' DI ALCUNE ICONE DELLA PAGINA WEB-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
-    <!--IMPORTO IL FILE CSS DEFDICATO AL RESET DELLO STILE DI DEAFULT DELLA PAGINA WEB-->
-    <link rel="stylesheet" href="css/default.css">
     
-    <!-- IMPORTO IL FILE CSS RISERVATO ALLA GRIGLIA DEI GIOCHI -->
-    <link rel="stylesheet" href="css/grid.css">
+    <!-- DA FIXARE -->
+	<style>
+	#hero{
+	
+    height: 55vh;
+    width: 100%;
+    background-size:cover;
+    background-position:top 25% right 0 ;
+   	padding:0 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    box-shadow: inset 0 0 20px 15px #282a2d
+    }
+    </style>
 
     <!--IMPOSTO L'ICONA CHE APPARIRA' AFFIANCO AL TITOLO DEL SITO WEB-->
     <link rel="icon" type="image/x-icon" href="img/faviconTitle.ico">
@@ -37,26 +44,39 @@
     <title>Game Over</title>
 </head>
 
-<body>
+<body style="color:white;">
 
-	<div id="container">
-		<div id="main">
+	<div id="containerDetails">
+		<div id="main" >
 			<%if(user == null) {%>
 			<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
+			
 			<%@include file = "../frammenti/unloggedheader.jsp"%><%} else{%> <%@ include file="../frammenti/loggedheader.jsp" %><%}%>
-			<div class="game-title" style="margin: 200px 100px">
-				<img class="copertina" src="./img/<%= bean.getImg().substring(bean.getImg().lastIndexOf("img")+4) %>" width=510px><br><br>
+			<%@ include file="../frammenti/searchbar.jsp" %><br>
+			<section id="hero">
+			<img src="./img/<%= bean.getImg().substring(bean.getImg().lastIndexOf("img")+4) %>" class="img-thumbnail" alt="Responsive image">
 				
-				<div class="game-price">
-					<p style="font-size: 30px"><mark><%= bean.getNome() %></mark></p>
-					<p>Prezzo: <%= bean.getPrezzo() %> Euro</p>		
-					<p>Descrizione: <br> <%= bean.getDescr() %></p>
-				
-					<a href="CartServlet?action=addcart&id=<%=bean.getId()%>" id="put-in-cart">Aggiungi Al Carrello</a>
+					<h4 style="font-size: 30px;"><mark style="background-color:rgb(255, 84, 0)"><%= bean.getNome() %></mark></h4>
+					
+					<div class="game-details">
+					<h4 style="font-size:30px"><%= bean.getPrezzo() %> &euro;</h4>		
+					
+					<a class="btn btn-primary" href="CartServlet?action=addcart&id=<%=bean.getId()%>" id="put-in-cart" 
+					style="background-color:rgb(255, 84, 0); border-style:none; height:37px; width:210px;margin-top:10px;">Aggiungi al carrello</a>
+					<%if(user!=null && user.getAdmin()==1){%>
+					<a class="btn btn-primary" href="#" 
+					style="background-color:red; border-style:none; height:37px; width:210px; margin-top:10px">Modifica Prodotto</a><%}%>
+					</div>
+					</section>
+					
+					<div class="game-description-details">
+					<h3 style="font-weight:bold">Riguardo al gioco:</h3>
+					<h2 style="font-size:16px"><%= bean.getDescr() %></h2>
+					</div>
 				</div>
 			</div>
-		</div>
-	</div>
+		
+	
 	
 	<%@ include file="../frammenti/footer.jsp" %>
 </body>

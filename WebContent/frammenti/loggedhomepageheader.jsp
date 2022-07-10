@@ -61,8 +61,8 @@ UserBean user1 = (UserBean) request.getSession().getAttribute("current_user");%>
     <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   
-  <div class="carousel-inner">
-    <div class="carousel-item active">
+  <div class="carousel-inner" >
+    <div class="carousel-item active" >
       <img src="img/slide1.jpg" class="d-block w-100" alt="...">
     </div>
     <div class="carousel-item">

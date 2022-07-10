@@ -34,6 +34,9 @@
 
     <!--IMPOSTO L'ICONA CHE APPARIRA' AFFIANCO AL TITOLO DEL SITO WEB-->
     <link rel="icon" type="image/x-icon" href="img/faviconTitle.ico">
+    
+       
+    </style>
     <title>Game Over</title>
 </head>
 
@@ -42,17 +45,17 @@
 		<div id="main">
 			<%if(user == null) {%>
 				<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
-				<%@ include file = "../frammenti/unloggedhomepageheader.jsp"%><%} else{%> <%@ include file="../frammenti/loggedhomepageheader.jsp" %> <%} %>
-
-				<%if(utente_check != null && utente_check.equals("true")){%>
+				<%@ include file = "../frammenti/unloggedhomepageheader.jsp"%><%} else{%> <%@ include file="../frammenti/loggedhomepageheader.jsp" %> <%} %><br>
+				<%@ include file="../frammenti/searchbar.jsp" %>
+				<!--  <%if(utente_check != null && utente_check.equals("true")){%>
 					<div class="alert-danger" role="alert">
 						UTENTE INESISTENTE, RIPROVA O <a href="Signup.jsp">REGISTRATI</a>
-					</div><br><%}%>	 
+					</div><br><%}%>	 -->
 				
 				<!-- post e´ piu´ sicuro di get, non conserva informazioni, utile per pw-->
 				<%if(user!=null && user.getAdmin()==1){%>
-					<h2 style="text-align: center; margin-top: 40px"><a href="AdminServlet2?action=mostra" class="productaccess">ACCEDI ALLA GESTIONE PRODOTTI E ORDINI</a></h2><%}%>
-	 	
+					<h3 style="text-align: center; margin-top: 40px"><a href="AdminServlet2?action=mostra" class="productaccess">ACCEDI ALLA GESTIONE PRODOTTI E ORDINI ADMIN</a></h3><%}%>
+	 		
 	 		<div class="gamesgrid" >
        			<%if(articoli != null && articoli.size()!=0){
 					Iterator<?> it =articoli.iterator();
@@ -70,6 +73,14 @@
 		 			</div>
 				</div><%}}%>
 			</div>
+			
+			<h2 style="color:white;margin-left:100px;text-align: center"><b>CATEGORIE</b></h2>
+			<section id=generes-container>
+			
+			<img  src="./img/beheaded.webp" class="img-fluid" alt="Responsive image" style="margin-right:400px;" >
+			
+			
+			</section>
 			
 			
 		</div>

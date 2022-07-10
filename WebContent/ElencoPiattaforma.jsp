@@ -40,6 +40,7 @@
 			<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
 				<%@include file = "../frammenti/unloggedheader.jsp"%><%} else{%><%@ include file="../frammenti/loggedheader.jsp" %><%}%>
 			<!-- CONTAINER GRIGLIA DEI VIDEOGIOCHI -->
+			<%@ include file="../frammenti/searchbar.jsp" %>
  			<div class="gamesgrid" >
        			<%if(articoli != null && articoli.size()!=0){
        				Iterator<?> it =articoli.iterator();
