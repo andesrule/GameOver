@@ -69,7 +69,7 @@
 												    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal5">Modifica Quantità</a></li>
 												    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal6">Modifica Genere</a></li>
 												    <li><hr class="dropdown-divider"></li>
-												    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal7">#Modifica Immagine</a></li>
+												    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#myModal7">Elimina Prodotto</a></li>
 	 					 </ul>
 												  
 												  

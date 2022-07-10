@@ -29,7 +29,7 @@
 
 	    .searchbar:hover > .search_input{
 	    padding: 0 10px;
-	    width: 362px;
+	    width: 360px;
 	    caret-color:rgb(255, 84, 0);
 	    transition: width 0.4s linear;
 	    }

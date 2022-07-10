@@ -57,7 +57,7 @@
 					<input type="hidden" name="idBean" value="<%=bean.getId()%>">
 						<div class="mb-3">
 							<label class="form-label" style="color:black;">Prezzo</label>
-							<input type="number" name="prezzo" class="form-control" placeholder="<%=bean.getPrezzo()%>">
+							<input type="number" step="0.01" name="prezzo" class="form-control" placeholder="<%=bean.getPrezzo()%>">
 						</div>
 						
 						<div class="modal-footer">
@@ -214,23 +214,23 @@
 		<div class="modal-dialog">
 			<div class="modal-content">
 				<div class="modal-header">
-					<h5 class="modal-title">Modifica Prodotto</h5>
+					<h5 class="modal-title">Elimina Prodotto</h5>
 					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>
 				</div>
 				
 				<div class="modal-body">
 				
-					<form method="post" id="myForm7" action="EditItemServlet" enctype="multipart/form-data">
-					<input type="hidden" name="action" value="edit-image">
-					<input type="hidden" name="idBean" value="<%=bean.getId()%>">
+					<form method="get" id="myForm7" action="AdminServlet2" >
+					<input type="hidden" name="action" value="removeFromDB">
+					<input type="hidden" name="IdBean" value="<%=bean.getId()%>">
 						<div class="mb-3">
-							<label class="form-label" style="color:black;">Immagine</label>
-							
+							<label class="form-label" style="color:black;">SICURO DI VOLER ELIMINARE</label>
+							<h4 style="color:black;"><%=bean.getNome()%>?</h4>
 						</div>
-						<input type="file" name="image"/>
+						
 						
 						<div class="modal-footer">
-							<input type="submit" class="btn btn-danger" value="Modifica" form="myForm7">
+							<input type="submit" class="btn btn-danger" value="Elimina" form="myForm7">
 						</div>
 						
 					</form>

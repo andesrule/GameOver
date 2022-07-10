@@ -47,14 +47,13 @@
 				<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
 				<%@ include file = "../frammenti/unloggedhomepageheader.jsp"%><%} else{%> <%@ include file="../frammenti/loggedhomepageheader.jsp" %> <%} %><br>
 				<%@ include file="../frammenti/searchbar.jsp" %>
-				<!--  <%if(utente_check != null && utente_check.equals("true")){%>
-					<div class="alert-danger" role="alert">
-						UTENTE INESISTENTE, RIPROVA O <a href="Signup.jsp">REGISTRATI</a>
-					</div><br><%}%>	 -->
+				
 				
 				<!-- post e´ piu´ sicuro di get, non conserva informazioni, utile per pw-->
 				<%if(user!=null && user.getAdmin()==1){%>
-					<h3 style="text-align: center; margin-top: 40px"><a href="AdminServlet2?action=mostra" class="productaccess">ACCEDI ALLA GESTIONE PRODOTTI E ORDINI ADMIN</a></h3><%}%>
+					<h3 style="text-align: center; margin-top: 40px"><a class="btn btn-danger" href="AdminServlet2?action=mostra" class="productaccess">ACCEDI ALLE FUNZIONALITÀ ADMIN</a></h3>			
+		
+					<%}%>
 	 		
 	 		<div class="gamesgrid" >
        			<%if(articoli != null && articoli.size()!=0){
@@ -67,8 +66,7 @@
 						<div class="game-price">
 							<p><span><%=bean.getNome()%></span>        <span class="price"><%= bean.getPrezzo() %>&euro;</span></p><br>
 		 					<!--  va bene ma implementa con js-->  
-							<%if(user!=null && user.getAdmin()==1){%>
-								<a style="color:red" href="AdminServlet2?action=removeFromDB&IdBean=<%=bean.getId()%>">Rimuovi dal Database</a><%}%> 
+							
 						</div>
 		 			</div>
 				</div><%}}%>
@@ -78,6 +76,7 @@
 			<section id=generes-container>
 			
 			<img  src="./img/beheaded.webp" class="img-fluid" alt="Responsive image" style="margin-right:400px;" >
+			
 			
 			
 			</section>

@@ -66,7 +66,7 @@ public class AdminServlet2 extends HttpServlet {
 			Collection<?> ordini = model2.doRetrieveAll();
 			request.removeAttribute("ordini");
 			request.setAttribute("ordini",ordini);
-			RequestDispatcher dispatcher1 = getServletContext().getRequestDispatcher("/AdminPage.jsp");
+			RequestDispatcher dispatcher1 = getServletContext().getRequestDispatcher("/AdminPage2.jsp");
 			dispatcher1.forward(request, response);
 			
 			}
@@ -135,7 +135,7 @@ public class AdminServlet2 extends HttpServlet {
 				request.removeAttribute("ordini");
 				request.setAttribute("ordini",ordini);
 				
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/AdminPage.jsp");
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/AdminPage2.jsp");
 				dispatcher.forward(request, response);
 			
 		}
@@ -160,7 +160,7 @@ public class AdminServlet2 extends HttpServlet {
 					Collection<?> ordini = model2.doRetrieveByDates(dataInizio,dataFine);
 					System.out.println(dataInizio +"    x   "+ dataFine);
 					request.setAttribute("ordiniPerData",ordini);
-					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/AdminPage.jsp");
+					RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/AdminPage2.jsp");
 					dispatcher.forward(request, response);
 				} catch (SQLException e) {
 					// TODO Auto-generated catch block
@@ -179,7 +179,7 @@ public class AdminServlet2 extends HttpServlet {
 
 				Collection<?> ordini2 = model2.doRetrieveByUser(user);
 				request.setAttribute("ordiniPerCliente",ordini2);
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/AdminPage.jsp");
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/AdminPage2.jsp");
 				dispatcher.forward(request, response);
 		}
 		}catch (SQLException e) 
