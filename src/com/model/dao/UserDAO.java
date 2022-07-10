@@ -277,7 +277,7 @@ public class UserDAO implements UserModel {
 		
 		int id = 0;
 		
-		String querySel= "Select * from "+TABLE_NAME ;
+		String querySel= "select max(idUtente) from "+TABLE_NAME ;
 		
 		try {
 			con = ds.getConnection();

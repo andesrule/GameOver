@@ -1,3 +1,11 @@
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1" import="com.model.javabeans.*,com.model.dao.*, java.util.*"%>
+    
+<%UserBean utente = (UserBean) request.getSession().getAttribute("current_user");
+PaymentDAO model1= new PaymentDAO();
+
+
+%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +35,12 @@
     <title>Game Over</title>
 </head>
 <body>
+	
+	<%if(utente != null){ 
+		Collection<?> metodoP = model1.doRetrieveByUser(utente.getIdUtente());
+		
+	%>
+
     <div id="container">
         <div id="main">
         <%@ include file = "../frammenti/loggedheader.jsp"%>
@@ -46,24 +60,25 @@
                             <div class="userinfocontainer">
                                 <h2>Dati utente</h2>
                                 <div class="anagraficdata">
-                                    <p>Nome: <span>Nome </span><span>cognome</span> Username: <span>username</span></p>
+                                    <p>Nome: <span><%= utente.getNome() %> </span><span><%=utente.getCognome() %></span> Username: <span><%=utente.getUsername() %></span></p>
                                 </div><br>
                                 <div class="contactuser">
                                     <h2>Contatti</h2>
                                     <div class="contactu">
-                                        <p>email: <span>email@mail.com</span> Telefono: <span>4443245142</span></p>
+                                        <p>email: <span><%=utente.getEmail() %></span> Telefono: <span><%=utente.getTelefono() %></span></p>
                                     </div><br>
                                     <div class="addressuser">
                                         <h2>Indirizzi</h2>
-                                        <p>Indirizzo1: <span>via</span>, <span>ncivico</span>, <span>citta</span>, <span>provincia</span>, <span>cap</span></p>
-                                        <p>Indirizzo2: <span>via</span>, <span>ncivico</span>, <span>citta</span>, <span>provincia</span>, <span>cap</span></p>
-                                        <p>Indirizzo3: <span>via</span>, <span>ncivico</span>, <span>citta</span>, <span>provincia</span>, <span>cap</span></p>
-                                        <p>Indirizzo4: <span>via</span>, <span>ncivico</span>, <span>citta</span>, <span>provincia</span>, <span>cap</span></p>
+                                        <p>Indirizzo: <span>via/Piazza: <%=utente.getVia() %></span>, <span>N° civico: <%=utente.getnCivico() %> </span>, <span>citta: <%=utente.getCitta() %></span>, <span>provincia: <%=utente.getProvincia() %></span>, <span>cap: <%=utente.getCap() %></span></p>
                                     </div>
                                 </div><br>
                                 <div class="paymentuser">
                                     <h2 style="margin-bottom:20px;">Metodi di pagamento</h2>
                                     <div class="creditcard">
+                                    <%if(metodoP != null && metodoP.size()!=0){
+										Iterator<?> it =metodoP.iterator();
+											while(it.hasNext()){
+									PaymentBean Paybean = (PaymentBean)it.next();%>
                                         <div class="chipcontainer">
                                             <img src="img/chip.png" alt="chip">
                                         </div>
@@ -71,64 +86,22 @@
                                             <img src="img/banklogo.png" alt="banklogo">
                                         </div>
                                         <div class="numbercard">
-                                            <p>3423 3241 5423 6542</p>
+                                            <p><%=Paybean.getNcarta() %></p>
                                         </div>
                                         <div class="expiresdate">
-                                            <p>VALID<br>THRU<span>09/23</span></p>
+                                            <p>VALID<br>THRU<span><%=Paybean.getMeseScad() %>/<%=Paybean.getAnnoScad() %></span></p>
                                         </div>
                                         <div class="nomecontainer">
                                             <div class="name">
-                                                <p>nome cognome</p>
+                                                <p><%=utente.getNome() %> <%=utente.getCognome() %></p>
                                             </div>
                                         </div>
                                         <div class="cvv">
-                                            <p>CVV: <span>897</span></p>
+                                            <p>CVV: <span><%=Paybean.getCvv() %></span></p>
                                         </div>
                                     </div>
-                                    <div class="creditcard">
-                                        <div class="chipcontainer">
-                                            <img src="img/chip.png" alt="chip">
-                                        </div>
-                                        <div class="banklogo">
-                                            <img src="img/banklogo.png" alt="banklogo">
-                                        </div>
-                                        <div class="numbercard">
-                                            <p>3423 3241 5423 6542</p>
-                                        </div>
-                                        <div class="expiresdate">
-                                            <p>VALID<br>THRU<span>09/23</span></p>
-                                        </div>
-                                        <div class="nomecontainer">
-                                            <div class="name">
-                                                <p>nome cognome</p>
-                                            </div>
-                                        </div>
-                                        <div class="cvv">
-                                            <p>CVV: <span>897</span></p>
-                                        </div>
-                                    </div>
-                                    <div class="creditcard">
-                                        <div class="chipcontainer">
-                                            <img src="img/chip.png" alt="chip">
-                                        </div>
-                                        <div class="banklogo">
-                                            <img src="img/banklogo.png" alt="banklogo">
-                                        </div>
-                                        <div class="numbercard">
-                                            <p>3423 3241 5423 6542</p>
-                                        </div>
-                                        <div class="expiresdate">
-                                            <p>VALID<br>THRU<span>09/23</span></p>
-                                        </div>
-                                        <div class="nomecontainer">
-                                            <div class="name">
-                                                <p>nome cognome</p>
-                                            </div>
-                                        </div>
-                                        <div class="cvv">
-                                            <p>CVV: <span>897</span></p>
-                                        </div>
-                                    </div>
+                                    
+                                   <%}} %>
                                 </div>
                              </div>
                         </div>
@@ -137,6 +110,8 @@
             </div>
         </div>
     </div>
+    <%}else{	response.sendRedirect("index.jsp");%>
+    <% }%>
     
 </body>
 </html>

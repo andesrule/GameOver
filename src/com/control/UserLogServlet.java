@@ -45,7 +45,6 @@ public class UserLogServlet extends HttpServlet {
 		String password = request.getParameter("pwd");
 		PrintWriter out= response.getWriter();
 		
-		
 		try {
 			UserBean bean = model.searchUser(username, password); //verifyUser ci va qui
 			System.out.println(bean);
@@ -61,7 +60,7 @@ public class UserLogServlet extends HttpServlet {
 				// login avvenuto con successo
 				request.getSession().setAttribute("current_user", bean);
 				request.setAttribute("utente_non_trovato", "false");
-				
+					
 				out.print("Ok");
 			}
 		} catch (SQLException e) {

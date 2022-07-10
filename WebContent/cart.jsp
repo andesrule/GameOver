@@ -2,12 +2,10 @@
 	pageEncoding="ISO-8859-1"
 	import="com.model.javabeans.*,com.model.dao.* , java.util.*"%>
 
-<%UserBean user = (UserBean) request.getSession().getAttribute("current_user");
-
+<%
 Cart cart = (Cart) request.getSession().getAttribute("cart");
 ProductDAO model = new ProductDAO();
 PaymentDAO model1= new PaymentDAO();
-
 
 UserBean utente = (UserBean) request.getSession().getAttribute("current_user");
 double totaleProdotto = 0;
@@ -55,7 +53,7 @@ PaymentBean Paybean=null;
 	<div class="container">
 		<div class="main">
 			<!-- CONTAINER DELLA BARRA DI NAVIGAZIONE -->
-			<%if(user == null) {%>
+			<%if(utente == null) {%>
 			<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
 			<%@ include file="../frammenti/unloggedheader.jsp"%>
 			<%} else{%>
@@ -89,12 +87,11 @@ PaymentBean Paybean=null;
 							</div>
 							<div class="price">
 								<h2><%=bean.getPrezzo() %>&euro;</h2>
-								<br> <em><span>Quantitï¿½: </span> <span>*<%=quantita %> </span></em><br>
+								<br> <em><span>Quantitità: </span> <span>*<%=quantita %> </span></em><br>
 								<form action="UpdateQuantity" method="post">
 									<input class="priceProduct" type="hidden" name="price" value="<%=bean.getPrezzo()%>">
 									<input class="idProduct" type="hidden" name="id" value="<%=bean.getId()%>">
 									<input class="quantity" type="number" name="quantity" min="1" max="<%=bean.getQuanTot()%>" value="<%=quantita%>">
-
 									<input type="submit" value="aggiorna">
 								</form>
 							</div>
@@ -119,7 +116,7 @@ PaymentBean Paybean=null;
 						<h2>Riepilogo ordine</h2>
 						<br>
 						<p>
-							Indirizzo di spedizione: <span><%=utente.getCitta() %></span>
+							Indirizzo di spedizione: <span><%=utente.getCitta() %> -Via/Piazza <%=utente.getVia() %> - N °<%=utente.getnCivico() %></span>
 						</p>
 						<br>
 						<p>
@@ -171,11 +168,12 @@ PaymentBean Paybean=null;
 					double tot = quantita * bean.getPrezzo();
 					totaleProdotto += tot;
 					quantTot += quantita;
+					
 			%>
 
 						<p>.
 						 <br>
-							<span><%=bean.getNome() %> * <%= quantita %> = <%=tot %> </span>&euro,
+							<span><%=bean.getNome() %> * <%= quantita %> = <%=tot %> </span>&euro;
 						</p>
 							<%}} %>
 						<br>
@@ -199,7 +197,7 @@ PaymentBean Paybean=null;
 	</div>
 <%}else{ %>
 	<div class="unloggedDiv">
-		<h3 style="text-align:center;">Non hai effettuato il login , se vuoi procedere col pagamanto registrati o loggati <a style="color: blue" href="login.jsp">QUI</a></h3>
+		<h3 style="text-align:center;">Non hai effettuato il login , se vuoi procedere col pagamanto registrati o loggati <a style="color: red" href="login.jsp">QUI</a></h3>
 		</div>
 <%} %>
 	<script src="js/userdiv.js"></script>

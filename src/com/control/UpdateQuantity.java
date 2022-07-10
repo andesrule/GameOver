@@ -40,8 +40,7 @@ public class UpdateQuantity extends HttpServlet {
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/cart.jsp");
 		dispatcher.forward(request, response);
 
-		
-		
+				
 	}
 
 	/**
