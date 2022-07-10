@@ -19,21 +19,7 @@
 
     
     <!-- DA FIXARE -->
-	<style>
-	#hero{
 	
-    height: 55vh;
-    width: 100%;
-    background-size:cover;
-    background-position:top 25% right 0 ;
-   	padding:0 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    box-shadow: inset 0 0 20px 15px #282a2d
-    }
-    </style>
 
     <!--IMPOSTO L'ICONA CHE APPARIRA' AFFIANCO AL TITOLO DEL SITO WEB-->
     <link rel="icon" type="image/x-icon" href="img/faviconTitle.ico">
@@ -53,7 +39,7 @@
 			
 			<%@include file = "../frammenti/unloggedheader.jsp"%><%} else{%> <%@ include file="../frammenti/loggedheader.jsp" %><%}%>
 			<%@ include file="../frammenti/searchbar.jsp" %><br>
-			<section id="hero">
+			<section id="hero" style="background-image: url(${pageContext.request.contextPath}/img/back<%=bean.getId() %>.jpg);" >
 			<img src="./img/<%= bean.getImg().substring(bean.getImg().lastIndexOf("img")+4) %>" class="img-thumbnail" alt="Responsive image">
 				
 					<h4 style="font-size: 30px;"><mark style="background-color:rgb(255, 84, 0)"><%= bean.getNome() %></mark></h4>

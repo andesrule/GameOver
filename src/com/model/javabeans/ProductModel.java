@@ -19,5 +19,6 @@ public interface ProductModel {
 	public  void updateDescription (int id, String newDescription) throws SQLException;
 	public  void updateImage (int id, String uploadPath) throws SQLException;
 	public  void updateGenere (int id, String genere) throws SQLException;
+	public  Collection<ProductBean> doRetrieveByGenere(String genere) throws SQLException;
 	
 }

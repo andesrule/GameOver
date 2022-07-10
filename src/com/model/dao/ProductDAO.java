@@ -499,6 +499,52 @@ public class ProductDAO implements ProductModel {
 			}
 		}
 		}
+	
+	public synchronized Collection<ProductBean> doRetrieveByGenere(String genere) throws SQLException{
+		Connection con = null;
+		PreparedStatement statement = null;
+		
+		Collection<ProductBean> articoli = new LinkedList<ProductBean>();
+		
+		String querySel= "Select * from "+TABLE_NAME+" where genere = ?";
+		try {
+			con = ds.getConnection();
+			statement = con.prepareStatement(querySel);
+			statement.setString(1,genere);
+			
+			ResultSet result = statement.executeQuery();
+			
+			while(result.next()) {
+				
+				ProductBean bean = new ProductBean();
+				
+				bean.setId(result.getInt("idArticolo"));
+				bean.setDescr(result.getString("descrizione"));
+				bean.setNome(result.getString("nome"));
+				bean.setPrezzo(result.getDouble("prezzo"));
+				bean.setDisp(result.getString("disponibilita"));
+				bean.setQuanTot(result.getInt("quantitaTot"));
+				bean.setIva(result.getDouble("iva"));
+				bean.setImg(result.getString("immagine"));
+				bean.setGenere(result.getString("genere"));
+				bean.setBack_image(result.getString("back_image"));
+				articoli.add(bean);
+				
+			}
+				
+		}finally {
+			try {
+				if(statement != null) {
+					statement.close();
+				}
+				
+			}finally{
+					if(con!=null)
+						con.close();
+				}
+			}
+		return articoli;
+}
 }
 
 
