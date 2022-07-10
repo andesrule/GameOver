@@ -126,7 +126,7 @@
 <h3>Inserimento Articoli</h3>
 
 <form method="post" id="my_form" action="AdminServlet2" enctype="multipart/form-data">
-<input type="hidden" name="action" value="insert">
+<input type="hidden" name="action" value="inseprt">
 <table>
     <tr>
         <td>
