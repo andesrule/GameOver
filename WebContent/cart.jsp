@@ -7,7 +7,6 @@ Cart cart = (Cart) request.getSession().getAttribute("cart");
 ProductDAO model = new ProductDAO();
 PaymentDAO model1= new PaymentDAO();
 
-
 UserBean utente = (UserBean) request.getSession().getAttribute("current_user");
 double totaleProdotto = 0;
 int quantTot=0;
