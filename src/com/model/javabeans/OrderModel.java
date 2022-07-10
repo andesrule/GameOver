@@ -10,4 +10,6 @@ public interface OrderModel {
 	public Collection<OrderBean> doRetrieveAll() throws SQLException;
 	public Collection<OrderBean> doRetrieveByDates(String dataInizio, String dataFine) throws SQLException;
 	public Collection<OrderBean> doRetrieveByUser(String username) throws SQLException;
+	public int doGetLastKey() throws SQLException;
+	
 }

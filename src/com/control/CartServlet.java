@@ -76,7 +76,7 @@ public class CartServlet extends HttpServlet {
 				// aggiungi al carrello
 				if(model.doRetrieveByKey(id).getDisp().equalsIgnoreCase("SI"))// && model.prendiPerId(id).getQuant()<quantita)
 				cart.addProduct(id);
-				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/cart.jsp");
+				RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/index.jsp");
 				dispatcher.forward(request, response);
 				}
 			else if (action.equalsIgnoreCase("deletefromcart")) {
