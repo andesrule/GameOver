@@ -292,12 +292,13 @@ html, head, body{
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    height: 200px;
-    width: 400px;
+    height: 250px;
+    width: 500px;
     border-radius: 20px;
     padding: 30px;
     font-family: 'Roboto Mono', monospace;
     margin-bottom: 30px;
+    overflow:hidden;
 }
 
 .chipcontainer{

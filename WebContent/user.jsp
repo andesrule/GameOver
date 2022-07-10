@@ -93,7 +93,7 @@ PaymentDAO model1= new PaymentDAO();
                                         </div>
                                         <div class="nomecontainer">
                                             <div class="name">
-                                                <p><%=utente.getNome() %> <%=utente.getCognome() %></p>
+                                                <p ><%=utente.getNome() %> <%=utente.getCognome() %> </p>
                                             </div>
                                         </div>
                                         <div class="cvv">

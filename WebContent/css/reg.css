@@ -101,8 +101,12 @@
     color: black;
 }
 
-#scadenza{
+#scadenzamese,#scadenzaanno{
     width: 50px;
+}
+
+#cvv{
+	width: 50px
 }
 
 .regcontainer a{
@@ -114,7 +118,7 @@
     color: rgb(150, 150, 150);
 }
 
-#errorname, #errorsurname, #errorusername, #errorpassword, #errorvia, #errorcivico, #errorcitta, #errorprovincia, #errorcap, #errorncarta{
+#errorname, #errorsurname, #errorusername,#errortel,#erroremail,#errorscadenza,#errorcvv, #errorpassword, #errorvia, #errorcivico, #errorcitta, #errorprovincia, #errorcap, #errorncarta{
     display: none;
     overflow: hidden;
     color: red;

@@ -62,6 +62,11 @@ public class UserSignupServlet extends HttpServlet {
 		int annoScad = Integer.parseInt(request.getParameter("annoscadenza"));
 		int cvv = Integer.parseInt(request.getParameter("cvv"));
 		
+		String prime4= nCarta.substring(0, 4);
+		String seconde4 = nCarta.substring(4,8);
+		String terze4 = nCarta.substring(8,12);
+		String quarte4 = nCarta.substring(12,16);
+		
 		System.out.println("Nome:"+ nome + " Cognome:" + cognome + " Username:" + username + " Password:" + password + " Email:" + email + " Telefono:"+  telefono + " Via:" + via + " Citta:" + citta + " Provincia:" + provincia +"  cap:" + cap);
 
 		UserBean bean = new UserBean();
@@ -87,10 +92,10 @@ public class UserSignupServlet extends HttpServlet {
 			int id = model.doGetLastKey();
 			System.out.println(id);
 			
-			payBean.setNcarta(nCarta);
+			payBean.setNcarta(prime4+" "+seconde4+" "+terze4+" "+quarte4);
 			payBean.setIdUtenteRef(id);
 			payBean.setCvv(cvv);
-			payBean.setAnnoScad(2000+annoScad);
+			payBean.setAnnoScad(annoScad);
 			payBean.setMeseScad(meseScad);
 			model1.doSave(payBean);
 			

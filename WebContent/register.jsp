@@ -71,7 +71,7 @@
                		        <input type="text" name="civico" id="civico" placeholder="23" ><br>
                		        <p id="errorcivico">errore</p>
 
-							<label for="citta">Cittï¿½</label><br>
+							<label for="citta">Città</label><br>
                		        <input type="text" name="citta" id="citta" placeholder="Ercolano" ><br>
                		        <p id="errorcitta">errore</p>
 							
@@ -99,7 +99,7 @@
 							<input type="submit" id="submit" value="Registrati">
                         </form>
 
-						<a href="login.jsp" style="cursor: pointer;">Hai giï¿½ un account? Clicca qui per effettuare il login</a><br>
+						<a href="login.jsp" style="cursor: pointer;">Hai già un account? Clicca qui per effettuare il login</a><br>
                     </div>
                 </div>
             </div>

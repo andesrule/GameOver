@@ -50,8 +50,8 @@ PaymentBean Paybean=null;
 <title>Game Over</title>
 </head>
 <body>
-	<div class="container">
-		<div class="main">
+	<div id="container">
+		<div id="main">
 			<!-- CONTAINER DELLA BARRA DI NAVIGAZIONE -->
 			<%if(utente == null) {%>
 			<!-- INCLUDO FRAMMENTO HEADER HOMEPAGE GUEST USER -->
@@ -75,9 +75,9 @@ PaymentBean Paybean=null;
 					
 						
 				<div class="cartcontainer">
-	
+				
 					<div class="product">
-
+					
 						<div class="imgcontainer">
 							<img src="./img/<%=bean.getImg().substring(bean.getImg().lastIndexOf("img")+4)%>" class="imgCart" alt="game12" >
 						</div> 
@@ -87,16 +87,16 @@ PaymentBean Paybean=null;
 							</div>
 							<div class="price">
 								<h2><%=bean.getPrezzo() %>&euro;</h2>
-								<br> <em><span>Quantitità: </span> <span>*<%=quantita %> </span></em><br>
+								<br> <em><span>Quantitità: </span> <span><%=quantita %> </span></em><br><br>
 								<form action="UpdateQuantity" method="post">
 									<input class="priceProduct" type="hidden" name="price" value="<%=bean.getPrezzo()%>">
 									<input class="idProduct" type="hidden" name="id" value="<%=bean.getId()%>">
 									<input class="quantity" type="number" name="quantity" min="1" max="<%=bean.getQuanTot()%>" value="<%=quantita%>">
-									<input type="submit" value="aggiorna">
+									<input type="submit" value=">" style="font-weight: bold;">
 								</form>
 							</div>
 							<div class="actioncart">
-								<a href="CartServlet?action=deletefromcart&id=<%=bean.getId()%>">Rimuovi dal carrello</a>
+								<a href="CartServlet?action=deletefromcart&id=<%=bean.getId()%>"><button style="border: none; background: transparent"><img src="img/delete.png" alt="trash" width="35px" style="cursor: pointer;"></button></a>
 							</div>
 									
 						</div>
@@ -111,7 +111,6 @@ PaymentBean Paybean=null;
 		
 			Collection<?> metodoP = model1.doRetrieveByUser(utente.getIdUtente());
 		%>
-				<div class="checkoutcontainer">
 					<div class="orderinfo">
 						<h2>Riepilogo ordine</h2>
 						<br>
@@ -171,7 +170,7 @@ PaymentBean Paybean=null;
 					
 			%>
 
-						<p>.
+						<p>
 						 <br>
 							<span><%=bean.getNome() %> * <%= quantita %> = <%=tot %> </span>&euro;
 						</p>
@@ -183,10 +182,9 @@ PaymentBean Paybean=null;
 						</p>
 						<form action="CheckOutOrder" method="Get">
 						
-						<input type="hidden" name="idUtente" value="<%=utente.getIdUtente() %>"><input type="hidden" name="idPagamento" value="<%=Paybean.getIdPagamento() %>"><input type="hidden" name="quantityTot" value="<%=quantTot %>"> <input type="hidden" name="prezzoTot" value="<%=totaleProdotto %>"><input type="submit" value="Acquista">
+						<input type="hidden" name="idUtente" value="<%=utente.getIdUtente() %>"><input type="hidden" name="idPagamento" value="<%=Paybean.getIdPagamento() %>"><input type="hidden" name="quantityTot" value="<%=quantTot %>"> <input type="hidden" name="prezzoTot" value="<%=totaleProdotto %>"><input type="submit" class="ordercomplete" value="Acquista">
 						</form>
 					
-					</div>
 			
 				</div>
 		
@@ -197,7 +195,7 @@ PaymentBean Paybean=null;
 	</div>
 <%}else{ %>
 	<div class="unloggedDiv">
-		<h3 style="text-align:center;">Non hai effettuato il login , se vuoi procedere col pagamanto registrati o loggati <a style="color: red" href="login.jsp">QUI</a></h3>
+		<h3 style="text-align:center; color: white">Non hai effettuato il login , se vuoi procedere col pagamanto registrati o effettua il login <a style="color: red" href="login.jsp" class="loga">QUI</a></h3>
 		</div>
 <%} %>
 	<script src="js/userdiv.js"></script>
