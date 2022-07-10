@@ -7,7 +7,7 @@
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 	<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-	
+	<script src="js/searchBar.js"></script>
  <link rel="stylesheet" href="css/search.css">
 	    
     <title>Search Box</title>
@@ -19,8 +19,9 @@
     <div class="container h-100">
       <div class="d-flex justify-content-center h-100">
         <div class="searchbar">
-          <input class="search_input" type="text" name="" placeholder="Search...">
-          <a href="#" class="search_icon"><i class="fas fa-search"></i></a>
+          <input class="search_input" type="text" name="searchBar" id="searchBar" placeholder="Search...">
+          <button style="background:transparent; border:none ;"type="submit" name="searchBar" id="submit" class="search_icon" value="">
+          <i class="fas fa-search"></i></button>
         </div>
       </div>
     </div>
