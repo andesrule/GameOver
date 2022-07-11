@@ -172,7 +172,7 @@ PaymentBean Paybean=null;
 
 						<p>
 						 <br>
-							<span><%=bean.getNome() %> * <%= quantita %> = <%=tot %> </span>&euro;
+							<span><%=bean.getNome() %> * <%= quantita %> = <%=String.format("%.2f",tot) %> </span>&euro;
 						</p>
 							<%}} %>
 						<br>
